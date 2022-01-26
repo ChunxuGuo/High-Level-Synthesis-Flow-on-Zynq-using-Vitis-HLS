@@ -20,7 +20,7 @@ After completing this lab, you will be able to:
     <img src ="./images/lab1/Figure1.png">
     </p>
     <p align = "center">
-    <i>Getting Started view of Vivado-HLS</i>
+    <i>Getting Started view of Vitis-HLS</i>
     </p>
 2. In the Getting Started GUI, click on **Create New Project**. The **New Vivado HLS Project** wizard opens.
 3. Click the *Browse…* button of the Location field and browse to **c:\xup\hls\labs\lab1** and then click **OK**.
@@ -29,7 +29,7 @@ After completing this lab, you will be able to:
     <img src ="./images/lab1/Figure2.png">
     </p>
     <p align = "center">
-    <i>New Vivado HLS Project wizard</i>
+    <i>New Vitis HLS Project wizard</i>
     </p>
 5. Click **Next**.
 6. In the *Add/Remove Files* window, type **matrixmul** as the Top Function name (the provided source file contains the function, called matrixmul, to be synthesized).
