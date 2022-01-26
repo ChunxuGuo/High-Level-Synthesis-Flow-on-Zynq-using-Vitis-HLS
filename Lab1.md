@@ -1,21 +1,21 @@
-# Vivado HLS Design Flow Lab
+# Vitis HLS Design Flow Lab
 
 ## Objectives
 
 After completing this lab, you will be able to:
 
-* Create a new project using Vivado HLS in GUI mode
+* Create a new project using Vitis HLS in GUI mode
 * Simulate a design
 * Synthesize a design
 * Implement a design
-* Perform design analysis using the Analysis capability of Vivado HLS
-* Analyze simulator output using Vivado and XSim simulator
+* Perform design analysis using the Analysis capability of Vitis HLS
+* Analyze simulator output using Vitis and XSim simulator
 
 ## Steps
 
 ### Create a New Project
-#### Create a new project in Vivado HLS targeting PYNQ-Z1 or PYNQ-Z2 board
-1. Select **Start > Xilinx Design Tools > Vivado HLS 2018.2**
+#### Create a new project in Vitis HLS targeting PYNQ-Z1 or PYNQ-Z2 board
+1. Select **Start > Xilinx Design Tools > Vitis HLS 2021.1**
     <p align="center">
     <img src ="./images/lab1/Figure1.png">
     </p>
