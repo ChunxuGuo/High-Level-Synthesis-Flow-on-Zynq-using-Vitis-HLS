@@ -15,14 +15,14 @@ After completing this lab, you will be able to:
 
 ### Create a New Project
 #### Create a new project in Vitis HLS targeting PYNQ-Z1 or PYNQ-Z2 board
-1. Select **Start > Xilinx Design Tools > Vitis HLS 2021.1**
+1. Select **Start > Xilinx Design Tools > Vitis HLS 2021.2**
     <p align="center">
     <img src ="./images/lab1/Figure1.png">
     </p>
     <p align = "center">
-    <i>Getting Started view of Vitis-HLS</i>
+    <i>Getting Started view of Vitis HLS</i>
     </p>
-2. In the Getting Started GUI, click on **Create New Project**. The **New Vivado HLS Project** wizard opens.
+2. In the Getting Started GUI, click on **Create New Project**. The **New Vitis HLS Project** wizard opens.
 3. Click the *Browse…* button of the Location field and browse to **c:\xup\hls\labs\lab1** and then click **OK**.
 4. For Project Name, type **matrixmul.prj**
     <p align="center">
