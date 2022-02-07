@@ -24,7 +24,7 @@ After completing this lab, you will be able to:
     </p>
 2. In the Getting Started GUI, click on **Create New Project**. The **New Vitis HLS Project** wizard opens.
 3. Click the *Browse…* button of the Location field and browse to **/home/xup/hls/labs/lab1** and then click **OK**.
-4. For Project Name, type **matrixmul**
+4. For Project Name, type **matrixmul**.
     <p align="center">
     <img src ="./images/lab1/Figure2.png">
     </p>
