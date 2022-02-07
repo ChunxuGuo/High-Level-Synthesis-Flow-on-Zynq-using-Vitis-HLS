@@ -9,13 +9,13 @@ After completing this lab, you will be able to:
 * Synthesize a design
 * Implement a design
 * Perform design analysis using the Analysis capability of Vitis HLS
-* Analyze simulator output using Vitis and XSim simulator
+* Analyze simulator output using Vivado and XSim simulator
 
 ## Steps
 
 ### Create a New Project
 #### Create a new project in Vitis HLS targeting PYNQ-Z1 or PYNQ-Z2 board
-1. Select **Start > Xilinx Design Tools > Vitis HLS 2021.2**
+1. Type **source /tools/Xilinx/Vitis/2021.2/settings64.sh** and then **vitis_hls** in the terminal.
     <p align="center">
     <img src ="./images/lab1/Figure1.png">
     </p>
