@@ -22,7 +22,7 @@ After completing this lab, you will be able to:
     <p align = "center">
     <i>Getting Started view of Vitis HLS</i>
     </p>
-2. In the Getting Started GUI, click on **Create New Project**. The **New Vitis HLS Project** wizard opens.
+2. In the Getting Started GUI, click on **Create Project**. The **New Vitis HLS Project** wizard opens.
 3. Click the *Browse…* button of the Location field and browse to **/home/xup/hls/labs/lab1** and then click **OK**.
 4. For Project Name, type **matrixmul**.
     <p align="center">
