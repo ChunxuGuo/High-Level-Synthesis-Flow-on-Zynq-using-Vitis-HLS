@@ -23,7 +23,7 @@ After completing this lab, you will be able to:
     <i>Getting Started view of Vitis HLS</i>
     </p>
 2. In the Getting Started GUI, click on **Create New Project**. The **New Vitis HLS Project** wizard opens.
-3. Click the *Browse…* button of the Location field and browse to **c:\xup\hls\labs\lab1** and then click **OK**.
+3. Click the *Browse…* button of the Location field and browse to **/home/xup/hls/labs/lab1** and then click **OK**.
 4. For Project Name, type **matrixmul.prj**
     <p align="center">
     <img src ="./images/lab1/Figure2.png">
@@ -32,10 +32,10 @@ After completing this lab, you will be able to:
     <i>New Vitis HLS Project wizard</i>
     </p>
 5. Click **Next**.
-6. In the *Add/Remove Files* window, type **matrixmul** as the Top Function name (the provided source file contains the function, called matrixmul, to be synthesized).
-7. Click the *Add Files…* button, select **matrixmul.cpp** file from the **c:\xup\hls\labs\lab1 folder**, and then click **Open**.
+6. In the *Add/Remove Design Files* window, type **matrixmul** as the Top Function name (the provided source file contains the function, called matrixmul, to be synthesized).
+7. Click the *Add Files…* button, select **matrixmul.cpp** file from the **/home/xup/hls/labs/lab1** folder, and then click **Open**.
 8. Click **Next**.
-9. In the *Add/Remove Files* for the testbench, click the *Add Files…* button, select **matrixmul_test.cpp** file from the **c:\xup\hls\labs\lab1** folder and click **Open**.
+9. In the *Add/Remove Testbench Files* for the testbench, click the *Add Files…* button, select **matrixmul_test.cpp** file from the **/home/xup/hls/labs/lab1** folder and click **Open**.
 10. Select the **matrixmul_test.cpp** in the files list window and click the *Edit CFLAG…* button, type **-DHW_COSIM**, and click **OK**. (This defines a compiler flag that will be used later.)
 11. Click **Next**.
 12. In the *Solution Configuration* page, leave **Solution** Name field as *solution1* and set the clock period as 10.
