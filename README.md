@@ -4,12 +4,12 @@ This course provides users with an understanding of high-level synthesis design 
 
 ## Required Setup
 
-Clone this repository and then copy the **sources** directory as **labs** to a working directory. The recommended working directory is **c:/xup/hls**.  After copying the directory, all labs will be carried out in their respective folders located at **c:/xup/hls/labs**. 
+Clone this repository and then copy the **sources** directory as **labs** to a working directory. The recommended working directory is **/home/xup/hls**.  After copying the directory, all labs will be carried out in their respective folders located at **/home/xup/hls/labs**. 
 
 ---
 #### In the instructions for the labs;
 
-**{labs}** refers to **c:/xup/hls/labs**.
+**{labs}** refers to **/home/xup/hls/labs**.
 
 ---
 **NOTE**
