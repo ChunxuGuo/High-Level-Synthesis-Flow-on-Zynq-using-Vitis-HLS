@@ -17,7 +17,7 @@ After completing this lab, you will be able to:
 #### Create a new project in Vitis HLS targeting PYNQ-Z1 or PYNQ-Z2 board
 1. Type **source /tools/Xilinx/Vitis/2021.2/settings64.sh** and then **vitis_hls** in the terminal.
     <p align="center">
-    <img src ="./images/lab1/Figure1.png">
+    <img src ="./images/lab1/Fig1.png">
     </p>
     <p align = "center">
     <i>Getting Started view of Vitis HLS</i>
@@ -26,7 +26,7 @@ After completing this lab, you will be able to:
 3. Click the *Browse…* button of the Location field and browse to **/home/xup/hls/labs/lab1** and then click **OK**.
 4. For Project Name, type **matrixmul**.
     <p align="center">
-    <img src ="./images/lab1/Figure2.png">
+    <img src ="./images/lab1/Fig2.png">
     </p>
     <p align = "center">
     <i>New Vitis HLS Project wizard</i>
@@ -42,7 +42,7 @@ After completing this lab, you will be able to:
 13. Click the **…** button of the *Part Selection* section.
 14. In the *Device Selection* Dialog page, select **Parts Specify** field, and select the following filters to select the **xc7z020clg400-1** part and click **OK**.
         <p align="center">
-        <img src ="./images/lab1/Figure3.png">
+        <img src ="./images/lab1/Fig3.png">
         </p>
         <p align = "center">
         <i>Using Parts Specify option in Part Selection Dialog</i>
@@ -50,7 +50,7 @@ After completing this lab, you will be able to:
 15. Click **Finish**.
         You will see the created project in the *Explorer* view. Expand various sub-folders to see the entries under each sub-folder. 
         <p align="center">
-        <img src ="./images/lab1/Figure4.png">
+        <img src ="./images/lab1/Fig4.png">
         </p>
         <p align = "center">
         <i>Explorer Window</i>
@@ -68,7 +68,7 @@ After completing this lab, you will be able to:
 1. Select **Project > Run C Simulation**, and click **OK** in the C Simulation Dialog window.
     The files will be compiled and you will see the output in the Console window.
     <p align="center">
-    <img src ="./images/lab1/Figure6.png">
+    <img src ="./images/lab1/Fig6.png">
     </p>
     <p align = "center">
     <i>Program output</i>
@@ -83,7 +83,7 @@ After completing this lab, you will be able to:
     The application will be compiled with **–g** option to include the debugging information, the compiled application will be invoked, and the debug perspective will be opened automatically.
 2. The Debug perspective will show the **matrixmul_test.cpp** in the source view, **argc** and **argv** variables defined in the *Variables* view, thread created and the program suspended at the main() function entry point in the *Debug* view.
     <p align="center">
-    <img src ="./images/lab1/Figure7.png">
+    <img src ="./images/lab1/Fig7.png">
     </p>
     <p align = "center">
     <i>A Debug perspective</i>
@@ -93,14 +93,14 @@ After completing this lab, you will be able to:
     The breakpoint is marked with a blue circle, and a tick.
 
     <p align="center">
-    <img src ="./images/lab1/Figure8.png">
+    <img src ="./images/lab1/Fig8.png">
     </p>
     <p align = "center">
     </p>
 4. Similarly, set a breakpoint at line 101 in the matrixmul() function.
 5. Using the **Step Over** (F6) button several times, observe the execution progress, and observe the variable values updating, as well as computed software result.
     <p align="center">
-    <img src ="./images/lab1/Figure9.png">
+    <img src ="./images/lab1/Fig9.png">
     </p>
     <p align = "center">
     <i>Debugger’s intermediate output view</i>
@@ -108,7 +108,7 @@ After completing this lab, you will be able to:
 6. Now click the **Resume** button or F8 to complete the software computation and stop at line 101.
 7. Observe the following computed software result in the variables view.
     <p align="center">
-    <img src ="./images/lab1/Figure10.png">
+    <img src ="./images/lab1/Fig10.png">
     </p>
     <p align = "center">
     <i>Software computed result</i>
@@ -117,7 +117,7 @@ After completing this lab, you will be able to:
 9. Using the **Step Over** (F6) several times, observe the computed results. Once satisfied, you can use the **Step Return** (F7) button to return from the function.
 10. The program execution will suspend at line 105 as we had set a breakpoint. Observe the software and hardware (function) computed results in the Variables view.
     <p align="center">
-    <img src ="./images/lab1/Figure11.png">
+    <img src ="./images/lab1/Fig11.png">
     </p>
     <p align = "center">
     <i>Computed results</i>
