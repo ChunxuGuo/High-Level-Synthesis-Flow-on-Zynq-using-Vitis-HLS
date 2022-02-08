@@ -81,7 +81,7 @@ After completing this lab, you will be able to:
 #### Run the application in debugger mode and understand the behavior of the program.
 1. Select **Project > Run C Simulation**. Select the **Launch Debugger** option and click **OK**.
     The application will be compiled with **–g** option to include the debugging information, the compiled application will be invoked, and the debug perspective will be opened automatically.
-2. The Debug perspective will show the **matrixmul_test.cpp** in the source view, **argc** and **argv** variables defined in the *Variables* view, objects which are in the current scope displayed in *Outline* view, thread created and the program suspended at the main() function entry point in the *Debug* view.
+2. The Debug perspective will show the **matrixmul_test.cpp** in the source view, **argc** and **argv** variables defined in the *Variables* view, thread created and the program suspended at the main() function entry point in the *Debug* view.
     <p align="center">
     <img src ="./images/lab1/Figure7.png">
     </p>
