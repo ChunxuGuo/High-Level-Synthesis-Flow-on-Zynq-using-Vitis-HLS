@@ -128,7 +128,7 @@ After completing this lab, you will be able to:
 
 ### Synthesize the Design
 #### Switch to Synthesis view and synthesize the design with the defaults. View the synthesis results and answer the question listed in the detailed section of this step.
-1. Switch to the *Synthesis* view by clicking **Synthesis** button on the tools bar.
+1. Switch to the *Synthesis* view by clicking **Exit Debug** button.
 2. Select **Solution > Run C Synthesis > Active Solution** to start the synthesis process.
 3. When the synthesis process is completed, the synthesis results will be displayed along with the Outline pane. Using the Outline pane, one can navigate to any part of the report with a simple click.
     <p align="center">
