@@ -144,7 +144,8 @@ After completing this lab, you will be able to:
     <p align = "center">
     <i>Explorer view after the synthesis process</i>
     </p>
-    Note that when the **syn** folder under the Solution1 folder is expanded in the Explorer view, it will show *report, systemC, verilog,* and *vhdl* sub-folders under which report files, and generated source (vhdl, verilog, header, and cpp) files. By double-clicking any of these entries will open the corresponding file in the information pane.
+    
+    Note that when the **syn** folder under the Solution1 folder is expanded in the Explorer view, it will show *report, verilog,* and *vhdl* sub-folders under which report files, and generated source (vhdl, verilog, header, and cpp) files. By double-clicking any of these entries will open the corresponding file in the information pane.
     Also note that if the target design has hierarchical functions, reports corresponding to lower-level functions are also created.
 5. The *Synthesis Report* shows the performance and resource estimates as well as estimated latency in the design.
 6. Using scroll bar on the right, scroll down into the report and answer the following question.
@@ -372,11 +373,11 @@ In this lab, you completed the major steps of the high-level synthesis design fl
 
 ## Answers
 **Answers for question 1:**  
-Estimated clock period: **8.70 ns**   
-Worst case latency: **79 clock cycles**   
-Number of DSP48E used: **1**   
-Number of FFs used: **44**   
-Number of LUTs used: **184**   
+Estimated clock period: **6.270 ns**   
+Worst case latency: **24 clock cycles**   
+Number of DSP48E used: **2**   
+Number of FFs used: **117**   
+Number of LUTs used: **393**   
 
 
 
