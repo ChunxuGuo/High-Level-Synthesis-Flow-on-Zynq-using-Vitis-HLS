@@ -366,10 +366,10 @@ After completing this lab, you will be able to:
     <p align = "center">
     <i>The ip folder content</i>
     </p>
-8. Close Vivado HLS by selecting **File > Exit**.
+8. Close Vitis HLS by selecting **File > Exit**.
 
 ## Conclusion
-In this lab, you completed the major steps of the high-level synthesis design flow using Vivado HLS. You created a project, adding source files, synthesized the design, simulated the design, and implemented the design. You also learned how to use the Analysis capability to understand the scheduling and binding.
+In this lab, you completed the major steps of the high-level synthesis design flow using Vitis HLS. You created a project, adding source files, synthesized the design, simulated the design, and implemented the design. You also learned how to use the Analysis capability to understand the scheduling and binding.
 
 ## Answers
 **Answers for question 1:**  
