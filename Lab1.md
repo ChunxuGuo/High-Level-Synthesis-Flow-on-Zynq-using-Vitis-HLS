@@ -170,7 +170,8 @@ After completing this lab, you will be able to:
 
 ### Analyze using Analysis Perspective
 #### Switch to the Analysis Perspective and understand the design behavior.
-1. Select **Solution > Open Analysis Perspective** or click on *Analysis* button on tools bar to open the analysis viewer.
+1. Select **Solution > Open Schedule Viewer** or click on *Analysis* button on tools bar to open the analysis viewer.
+
     The Analysis perspective consists of 4 panes as shown below. Note that the module and loops hierarchies are displayed unexpanded by default.
     The **Module Hierarchy** pane shows both the performance and area information for the entire design and can be used to navigate through the hierarchy. The **Performance Profile** pane is visible and shows the performance details for this level of hierarchy. The information in these two panes is similar to the information reviewed earlier in the synthesis report.
     The **Schedule Viewer** is also shown in the right-hand side pane. This view shows how the operations in this particular block are scheduled into clock cycles.
