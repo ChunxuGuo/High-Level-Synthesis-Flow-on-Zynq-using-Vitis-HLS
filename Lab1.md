@@ -334,7 +334,6 @@ Click on the *RTL Synthesis, Place & Route* check box to run the implementation 
     <p align = "center">
     <i>Implementation results in Vivado HLS </i>
     </p>
-
     Observe that the timing constraint was met, the achieved period, and the type and amount of resources used.
     <p align="center">
     <img src ="./images/lab1/Fig32.png">
