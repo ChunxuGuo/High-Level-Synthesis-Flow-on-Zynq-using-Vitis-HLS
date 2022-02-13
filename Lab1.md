@@ -327,7 +327,6 @@ Click on the *RTL Synthesis, Place & Route* check box to run the implementation 
     <p align = "center">
     <i>Console view</i>
     </p>
-
     When the run is completed the implementation report will be displayed in the information pane.
     <p align="center">
     <img src ="./images/lab1/Fig31.png">
