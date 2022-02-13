@@ -10,46 +10,46 @@ After completing this lab, you will be able to:
 
 ## Steps
 
-### Create a Vivado HLS Project from Command Line
-#### Validate your design using Vivado HLS command line mode. Create a new Vivado HLS project from the command line.
-1. Select **Start > Xilinx Design Tools > Vivado HLS 2018.2 Command Prompt**.
-2. In the Vivado HLS Command Prompt window, change directory to **c:\xup\hls\labs\lab2**.
+### Create a Vitis HLS Project from Command Line
+#### Validate your design using terminal. Create a new Vitis HLS project from the terminal.
+1. Open a terminal.
+2. Change directory to **/home/xup/hls/labs/lab2**.
     A self-checking program (yuv_filter_test.c) is provided. Using that we can validate the design. A Makefile is also provided. Using the Makefile, the necessary source files can be compiled and the compiled program can be executed. You can examine the contents of these files and the project directory. 
-3. In the Vivado HLS Command Prompt window, type **make** to compile and execute the program. (You might need to set up the system environment variable for make command)
+3. In the terminal, type **make** to compile and execute the program. (You might need to set up the system environment variable for make command)
     <p align="center">
-    <img src ="./images/lab2/Figure1.png">
+    <img src ="./images/lab2/Fig1.png">
     </p>
     <p align = "center">
     <i>Validating the design</i>
     </p>
     Note that the source files (yuv_filter.c, yuv_filter_test.c, and image_aux.c) were compiled, then yuv_filter executable program was created, and then it was executed. The program tests the design and outputs Test Passed message.
-    A Vivado HLS tcl script file (pynq_yuv_filter.tcl) is provided and can be used to create a Vivado HLS project.
-4. Type **vivado_hls –f pynq_yuv_filter.tcl** in the Vivado HLS Command Prompt window to create the project targeting xc7z020clg400-1 part.
-    The project will be created and Vivado HLS.log file will be generated.
-5. Open the **vivado_hls.log** file from *c:\xup\hls\labs\lab2* using any text editor and observe the following sections:
+    A Viyis HLS tcl script file (pynq_yuv_filter.tcl) is provided and can be used to create a Vitis HLS project.
+4. Type **vitis_hls –f pynq_yuv_filter.tcl** in the terminal to create the project targeting xc7z020clg400-1 part.
+    The project will be created and Vitis HLS.log file will be generated.
+5. Open the **vitis_hls.log** file from */home/xup/hls/labs/lab2* using any text editor and observe the following sections:
 * Creating directory and project called yuv_filter.prj within it, adding design files to the project, setting solution name as solution1, setting target device, setting desired clock period, and importing the design and testbench files.
 * Synthesizing (Generating) the design which involves scheduling and binding of each functions and sub-function.
 * Generating RTL of each function and sub-function in SystemC, Verilog, and VHDL languages.
     <p align="center">
-    <img src ="./images/lab2/Figure2.png">
+    <img src ="./images/lab2/Fig2.png">
     </p>
     <p align = "center">
     <i>Creating project and setting up parameters</i>
     </p>
     <p align="center">
-    <img src ="./images/lab2/Figure3.png">
+    <img src ="./images/lab2/Fig3.png">
     </p>
     <p align = "center">
     <i>Synthesizing (Generating) the design</i>
     </p>
     <p align="center">
-    <img src ="./images/lab2/Figure4.png">
+    <img src ="./images/lab2/Fig4.png">
     </p>
     <p align = "center">
     <i>Generating RTL</i>
     </p>
-6. Open the created project (in GUI mode) from the Vivado HLS Command Prompt window, by typing **vivado_hls –p yuv_filter.prj**.
-    The Vivado HLS will open in GUI mode and the project will be opened.
+6. Open the created project (in GUI mode) from the terminal, by typing **vitis_hls –p yuv_filter.prj**.
+    The Vitis HLS will open in GUI mode and the project will be opened.
 
 ### Analyze the Created Project and Results
 #### Open the source file and note that three functions are used. Look at the results and observe that the latencies are undefined (represented by ?).
