@@ -343,7 +343,6 @@ Click on the *RTL Synthesis, Place & Route* check box to run the implementation 
     </p>
 5. Expand the Verilog and vhdl sub-folders and observe that the Verilog sub-folder only has the rtl file whereas the vhdl sub-folder has several files and sub-folders as the synthesis and implementation runs were made for it.
     It includes project.xpr file (the Vivado project file), matrixmul.xdc file (timing constraint file), project.runs folder among others.
-
     <p align="center">
     <img src ="./images/lab1/Fig33.png">
     </p>
@@ -351,14 +350,14 @@ Click on the *RTL Synthesis, Place & Route* check box to run the implementation 
     <i>The implementation directory</i>
     </p>
 
-7. Expand the **ip** folder and observe the IP packaged as a zip file, **xilinx_com_hls_matrixmul_1_0.zip**, which can be added to the Vivado IP catalog.
+6. Expand the **ip** folder and observe the IP packaged as a zip file, **xilinx_com_hls_matrixmul_1_0.zip**, which can be added to the Vivado IP catalog.
     <p align="center">
     <img src ="./images/lab1/Fig34.png">
     </p>
     <p align = "center">
     <i>The ip folder content</i>
     </p>
-8. Close Vitis HLS by selecting **File > Exit**.
+7. Close Vitis HLS by selecting **File > Exit**.
 
 ## Conclusion
 In this lab, you completed the major steps of the high-level synthesis design flow using Vitis HLS. You created a project, adding source files, synthesized the design, simulated the design, and implemented the design. You also learned how to use the Analysis capability to understand the scheduling and binding.
