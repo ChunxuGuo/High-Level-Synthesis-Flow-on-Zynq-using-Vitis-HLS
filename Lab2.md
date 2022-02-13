@@ -23,7 +23,7 @@ After completing this lab, you will be able to:
     <i>Validating the design</i>
     </p>
     Note that the source files (yuv_filter.c, yuv_filter_test.c, and image_aux.c) were compiled, then yuv_filter executable program was created, and then it was executed. The program tests the design and outputs Test Passed message.
-    A Viyis HLS tcl script file (pynq_yuv_filter.tcl) is provided and can be used to create a Vitis HLS project.
+    A Vitis HLS tcl script file (pynq_yuv_filter.tcl) is provided and can be used to create a Vitis HLS project.
 4. Type **vitis_hls –f pynq_yuv_filter.tcl** in the terminal to create the project targeting xc7z020clg400-1 part.
     The project will be created and Vitis HLS.log file will be generated.
 5. Open the **vitis_hls.log** file from */home/xup/hls/labs/lab2* using any text editor and observe the following sections:
