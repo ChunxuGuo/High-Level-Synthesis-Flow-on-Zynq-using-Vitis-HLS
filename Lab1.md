@@ -280,29 +280,21 @@ After completing this lab, you will be able to:
     </p>
 
 #### Analyze the dumped traces.
-1. Click on the ![wave_viewer](images/lab1/wave_viewer.png) button on tools bar to open the wave viewer. This will start Vivado 2021.2 and open the wave viewer.
+1. Click on the ![wave_viewer](images/lab1/waveviewer.png) button on tools bar to open the wave viewer. This will start Vivado 2021.2 and open the wave viewer.
 2. Click on the zoom fit tool button ( ) to see the entire simulation of one iteration.
 3. Select *a_address0* in the waveform window, right-click and select **Radix > Unsigned Decimal**.
-    Similarly, do the same for *b_address0* and *res_address0* signals.
-4. Similarly, set the *a_q0, b_q0,* and *res_d0* radix to **Signed Decimal**.
+    Similarly, do the same for *b_address0*, *a_address1*, *b_address1* and *res_address0* signals.
+4. Similarly, set the *a_q0, b_q0, a_q1, b_q1* and *res_d0* radix to **Signed Decimal**.
     You should see the output similar to shown below.
     <p align="center">
-    <img src ="./images/lab1/Figure26.png">
+    <img src ="./images/lab1/Fig26.png">
     </p>
     <p align = "center">
     <i>Full waveform showing iteration worth simulation</i>
     </p>
-    Note that as soon as ap_start is asserted, ap_idle has been de-asserted indicating that the design is in computation mode. The ap_idle signal remains de-asserted until ap_done is asserted, indicating completion of the process. This indicates 79 clock cycles latency.
-5. Using the *Zoom In* button, view area of ~160 ns and ~550 ns.
-    <p align="center">
-    <img src ="./images/lab1/Figure27.png">
-    </p>
-    <p align = "center">
-    <i>Zoomed view</i>
-    </p>
-    Observe that the design expects element data by providing a_address0, a_ceo, b_address0, b_ceo signals and outputs result using res_d0, res_we0, and res_ce0.
-6. View various part of the simulation and try to understand how the design works.
-7. When done, close Vivado by selecting **File > Exit**. Click **OK** if prompted, and then **Discard** to close the program without saving.
+    Note that as soon as ap_start is asserted, ap_idle has been de-asserted indicating that the design is in computation mode. The ap_idle signal remains de-asserted until ap_done is asserted, indicating completion of the process. This indicates 24 clock cycles latency.
+5. View various part of the simulation and try to understand how the design works.
+6. When done, close Vivado by selecting **File > Exit**. Click **OK** if prompted, and then **Discard** to close the program without saving.
 
 ### Export RTL and Implement
 #### In Vivado HLS, export the design, selecting VHDL as a language, and run the implementation by selecting Evaluate option.
