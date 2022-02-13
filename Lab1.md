@@ -298,19 +298,21 @@ After completing this lab, you will be able to:
 
 ### Export RTL and Implement
 #### In Vivado HLS, export the design, selecting VHDL as a language, and run the implementation by selecting Evaluate option.
-1. In Vivado-HLS, select **Solution > Export RTL** or click on the ![Export](images/lab1/Export.png) button on tools bar to open the dialog box so the desired implementation can be run.
+1. In Vivado-HLS, select **Solution > Export RTL** to open the dialog box.
     An Export RTL Dialog box will open.
     <p align="center">
-    <img src ="./images/lab1/Figure28.png">
+    <img src ="./images/lab1/Fig28.png">
     </p>
     <p align = "center">
     <i>A Export RTL Dialog box</i>
     </p>
-    With default settings (shown above), the IP packaging process will run and create a package for the Vivado IP Catalog. Another option available from the Format Selection drop-down menu, is to create System Generator for DSP.
-2. Click on the drop-down menu of the **Evaluate Generated RTL** field and select **VHDL**.
-3. Click on the *Vivado synthesis, place and route* check box to run the implementation tool.
+    With default settings (shown above), the IP packaging process will run and create a package for the Vivado IP Catalog. Another option available from the Export Format drop-down menu, is to create Vivado IP for System Generator.
+2. Select **Solution > Implementation** to open the dialog box..
+3. Click on the drop-down menu of the **RTL** field and select **VHDL**.
+
+Click on the *RTL Synthesis, Place & Route* check box to run the implementation tool.
     <p align="center">
-    <img src ="./images/lab1/Figure29.png">
+    <img src ="./images/lab1/Fig29.png">
     </p>
     <p align = "center">
     <i>Selecting Evaluate options</i>
@@ -320,7 +322,7 @@ After completing this lab, you will be able to:
     * Exporting RTL as an IP in the IP-XACT format
     * RTL evaluation, since we selected Evaluate option 1.Goes through Synthesis 2.Goes through Placement and Routing
     <p align="center">
-    <img src ="./images/lab1/Figure30.png">
+    <img src ="./images/lab1/Fig30.png">
     </p>
     <p align = "center">
     <i>Console view</i>
@@ -328,7 +330,7 @@ After completing this lab, you will be able to:
 
     When the run is completed the implementation report will be displayed in the information pane.
     <p align="center">
-    <img src ="./images/lab1/Figure31.png">
+    <img src ="./images/lab1/Fig31.png">
     </p>
     <p align = "center">
     <i>Implementation results in Vivado HLS </i>
@@ -336,16 +338,16 @@ After completing this lab, you will be able to:
 
     Observe that the timing constraint was met, the achieved period, and the type and amount of resources used.
     <p align="center">
-    <img src ="./images/lab1/Figure32.png">
+    <img src ="./images/lab1/Fig32.png">
     </p>
     <p align = "center">
     <i>Explorer view after the RTL Export run </i>
     </p>
 5. Expand the Verilog and vhdl sub-folders and observe that the Verilog sub-folder only has the rtl file whereas the vhdl sub-folder has several files and sub-folders as the synthesis and implementation runs were made for it.
-    It includes project.xpr file (the Vivado project file), matrixmul.xdc file (timing constraint file), project.runs folder (which includes synth_1 and impl_1 sub-folders created by the synthesis and implementation runs) among others.
+    It includes project.xpr file (the Vivado project file), matrixmul.xdc file (timing constraint file), project.runs folder among others.
 
     <p align="center">
-    <img src ="./images/lab1/Figure33.png">
+    <img src ="./images/lab1/Fig33.png">
     </p>
     <p align = "center">
     <i>The implementation directory</i>
@@ -353,7 +355,7 @@ After completing this lab, you will be able to:
 
 7. Expand the **ip** folder and observe the IP packaged as a zip file, **xilinx_com_hls_matrixmul_1_0.zip**, which can be added to the Vivado IP catalog.
     <p align="center">
-    <img src ="./images/lab1/Figure34.png">
+    <img src ="./images/lab1/Fig34.png">
     </p>
     <p align = "center">
     <i>The ip folder content</i>
