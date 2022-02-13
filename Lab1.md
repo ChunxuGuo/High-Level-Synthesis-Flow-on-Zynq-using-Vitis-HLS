@@ -177,53 +177,52 @@ After completing this lab, you will be able to:
     The **Schedule Viewer** is also shown in the right-hand side pane. This view shows how the operations in this particular block are scheduled into clock cycles.
 
     <p align="center">
-    <img src ="./images/lab1/Figure15.png">
+    <img src ="./images/lab1/Fig15.png">
     </p>
     <p align = "center">
     <i>Analysis perspective</i>
     </p>
-2. Click on ‘>’ of loop Row to expand, and then similarly click on sub-loops **Col** and **Product** to fully expand the loop hierarchy.
+2. Click on ‘>’ of loop Row_Col to expand.
     <p align="center">
-    <img src ="./images/lab1/Figure16.png">
+    <img src ="./images/lab1/Fig16.png">
     </p>
     <p align = "center">
     <i>Performance matrix showing top-level Row operation</i>
     </p>
-    From this we can see that in the first state (C1) of the Row the loop exit condition is checked and there is an add operation performed. This addition is likely the counter to count the loop iterations, and we can confirm this.
-3. Select the block for the **adder** ( **i_1(+)**) in state C1, right-click and select **Goto Source**.
-    The source code pane will be opened, highlighting line 75 where the Row loop index is being tested and incremented. In the next state (C2) it starts to execute the Col loop.
+    From this we can see that there is an add operation performed. This addition is likely the counter to count the loop iterations, and we can confirm this.
+3. Select the block for the **adder** ( **add_in75_3(+)**), right-click and select **Goto Source**.
+    The source code pane will be opened, highlighting line 75 where the loop index is being tested and incremented.
     <p align="center">
-    <img src ="./images/lab1/Figure17.png" width="60%" height="80%"/>
+    <img src ="./images/lab1/Fig17.png" width="60%" height="80%"/>
     </p>
     <p align = "center">
     <i>Cross probing into the source file</i>
     </p>
-4. Click on the cell (**tmp 2(+)**) in the Col loop to see the source code highlighting (line 79) update.
-5. Expand the Performance Profile hierarchy and note iteration latencies, Trip counts, and overall latencies for each of the nested loops.
+4. Expand the Performance Profile hierarchy and note iteration latencies, Trip counts, and overall latencies.
     <p align="center">
-    <img src ="./images/lab1/Figure18.png">
+    <img src ="./images/lab1/Fig18.png">
     </p>
     <p align = "center">
     <i>The Performance Profile output</i>
     </p>
-6. Click next to the **matrixmul** entry in the Module Hierarchy and observe that the entry is not expanded, since there are no lower-level functions defined in the design.
-7. Select the **Resource Profile** tab and observe various resources and where they have been used. You can expand Expressions and Registers sections to see how the resources are being used by which operations.
+5. Click next to the **matrixmul** entry in the Module Hierarchy and observe that the entry is not expanded, since there are no lower-level functions defined in the design.
+6. Select the **Resource Profile** tab and observe various resources and where they have been used. You can expand Expressions and Registers sections to see how the resources are being used by which operations.
     <p align="center">
-    <img src ="./images/lab1/Figure19.png">
+    <img src ="./images/lab1/Fig19.png">
     </p>
     <p align = "center">
     <i>The Resource Profile tab view</i>
     </p>
-8. Click on the **Synthesis** tool bar button to switch back to the *Synthesis* view.
+7. Click on the **Synthesis** tool bar button to switch back to the *Synthesis* view.
 
 ### Run C/RTL Co-simulation
 #### Run the C/RTL Co-simulation with the default settings of VHDL. Verify that the simulation passes.
-1. Select **Solution > Run C/RTL Cosimulation** or click on the ![Check_Box](images/lab1/Check_Box.PNG) button in the *Synthesis* view to open the dialog box so the desired simulations can be selected and run.
+1. Select **Solution > Run C/RTL Cosimulation** to open the dialog box so the desired simulations can be selected and run.
     A **C/RTL Co-simulation Dialog box** will open.
 2. Make sure the **VHDL** option is selected.
-    This allows the simulation to be performed using VHDL. To perform the verification using Verilog, you can select Verilog and choose the simulator from the drop-down menu or let the tools use the first simulator that appears in the PATH variable.
+    This allows the simulation to be performed using VHDL. To perform the verification using Verilog, you can select Verilog.
     <p align="center">
-    <img src ="./images/lab1/Figure20.png">
+    <img src ="./images/lab1/Fig20.png">
     </p>
     <p align = "center">
     <i>A C/RTL Co-simulation Dialog</i>
@@ -237,17 +236,17 @@ After completing this lab, you will be able to:
     This eliminates writing a separate testbench for the synthesized design.
 
     <p align="center">
-    <img src ="./images/lab1/Figure21.png">
+    <img src ="./images/lab1/Fig21.png">
     </p>
     <p align = "center">
     <i>Console view showing simulation progress</i>
     </p>
 
 4. Once the simulation verification is completed, the simulation report tab will open showing the results. The report indicates if the simulation passed or failed. In addition, the report indicates the measured latency and interval.
-    Since we have selected only VHDL, the result shows the latencies and interval (initiation) which indicates after how many clock cycles later the next input can be provided. Since the design is not pipelined, it will be latency+1 clock cycles.
+    Since we have selected only VHDL, the result shows the latencies and interval (initiation) which indicates after how many clock cycles later the next input can be provided.
 
     <p align="center">
-    <img src ="./images/lab1/Figure22.png">
+    <img src ="./images/lab1/Fig22.png">
     </p>
     <p align = "center">
     <i>Co-simulation results</i>
@@ -255,33 +254,33 @@ After completing this lab, you will be able to:
 
 ### Viewing Simulation Results in Vivado
 #### Run Verilog simulation with Dump Trace option selected.
-1. Select **Solution > Run C/RTL Co-simulation** or click on the ![Check_Box](images/lab1/Check_Box.PNG) button in the *Synthesis* view to open the dialog box so the desired simulations can be run.
-2. Click on the **Verilog RTL** Selection option, leaving Verilog/VHDL Simulator Section option to Auto.
-    Optionally, you can click on the drop-down button and select the desired simulator from the available list of XSim, ISim, ModelSim, and Riviera.
+1. Select **Solution > Run C/RTL Co-simulation** to open the dialog box so the desired simulations can be run.
+2. Click on the **Verilog** Selection option.
+    Optionally, you can click on the drop-down button and select the desired simulator from the available list of Vivado XSim, ModelSim, Xcelium, VCS, and Riviera.
 3. Select **All** for the *Dump Trace* option and click **OK**.
     <p align="center">
-    <img src ="./images/lab1/Figure23.png">
+    <img src ="./images/lab1/Fig23.png">
     </p>
     <p align = "center">
     <i>Setting up for Verilog simulation and dump trace</i>
     </p>
     When RTL verification completes the co-simulation report automatically opens showing the Verilog simulation has passed (and the measured latency and interval). In addition, because the Dump Trace option was used and Verilog was selected, two trace files entries can be seen in the Verilog simulation directory.
     <p align="center">
-    <img src ="./images/lab1/Figure24.png">
+    <img src ="./images/lab1/Fig24.png">
     </p>
     <p align = "center">
     <i>Explorer view after the Verilog RTL co-simulation run</i>
     </p>
     The Co-simulation report shows the test was passed for Verilog along with latency and Interval results.
     <p align="center">
-    <img src ="./images/lab1/Figure25.png">
+    <img src ="./images/lab1/Fig25.png">
     </p>
     <p align = "center">
     <i>Cosimulation report</i>
     </p>
 
 #### Analyze the dumped traces.
-1. Click on the ![wave_viewer](images/lab1/wave_viewer.png) button on tools bar to open the wave viewer. This will start Vivado 2018.2 and open the wave viewer.
+1. Click on the ![wave_viewer](images/lab1/wave_viewer.png) button on tools bar to open the wave viewer. This will start Vivado 2021.2 and open the wave viewer.
 2. Click on the zoom fit tool button ( ) to see the entire simulation of one iteration.
 3. Select *a_address0* in the waveform window, right-click and select **Radix > Unsigned Decimal**.
     Similarly, do the same for *b_address0* and *res_address0* signals.
