@@ -29,7 +29,7 @@ After completing this lab, you will be able to:
 5. Open the **vitis_hls.log** file from */home/xup/hls/labs/lab2* using any text editor and observe the following sections:
 * Creating directory and project called yuv_filter.prj within it, adding design files to the project, setting solution name as solution1, setting target device, setting desired clock period, and importing the design and testbench files.
 * Synthesizing (Generating) the design which involves scheduling and binding of each functions and sub-function.
-* Generating RTL of each function and sub-function in SystemC, Verilog, and VHDL languages.
+* Generating RTL of each function and sub-function in Verilog and VHDL languages.
     <p align="center">
     <img src ="./images/lab2/Fig2.png">
     </p>
