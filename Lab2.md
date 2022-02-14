@@ -53,18 +53,18 @@ After completing this lab, you will be able to:
 
 ### Analyze the Created Project and Results
 #### Open the source file and note that three functions are used. Look at the results and observe that the latencies are undefined (represented by ?).
-1. In Vivado HLS GUI, expand the source folder in the *Explorer* view and double click **yuv_filter.c**
+1. In Vitis HLS GUI, expand the source folder in the *Explorer* view and double click **yuv_filter.c**
     to view the content.
 * The design is implemented in 3 functions: **rgb2yuv**, **yuv_scale** and **yuv2rgb**.
 * Each of these filter functions iterates over the entire source image (which has maximum dimensions specified in image_aux.h), requiring a single source pixel to produce a pixel in the result image.
 * The scale function simply applies individual scale factors, supplied as top-level arguments to the Y’UV components.
 * Notice that most of the variables are of user-defined (typedef) and aggregate (e.g. structure, array) types.
-* Also notice that the original source used malloc() to dynamically allocate storage for the internal image buffers. While appropriate for such large data structures in software, malloc() is not synthesizable and is not supported by Vivado HLS.
-* A viable workaround is conditionally compiled into the code, leveraging the __SYNTHESIS__ macro. Vivado HLS automatically defines the __SYNTHESIS__ macro when reading any code. This ensure the original malloc() code is used outside of synthesis but Vivado HLS will use the workaround when synthesizing.
+* Also notice that the original source used malloc() to dynamically allocate storage for the internal image buffers. While appropriate for such large data structures in software, malloc() is not synthesizable and is not supported by Vitis HLS.
+* A viable workaround is conditionally compiled into the code, leveraging the __SYNTHESIS__ macro. Vitis HLS automatically defines the __SYNTHESIS__ macro when reading any code. This ensure the original malloc() code is used outside of synthesis but Vitis HLS will use the workaround when synthesizing.
 2. Expand the **syn > report** folder in the *Explorer* view and double-click yuv_filter_csynh.rpt entry to open the synthesis report.
 3. Each of the loops in this design has variable bounds – the width and height are defined by members of input type image_t. When variables bounds are present on loops the total latency of the loops cannot be determined: this impacts the ability to perform analysis using reports. Hence, **“?”** is reported for various latencies.
     <p align="center">
-    <img src ="./images/lab2/Figure5.png">
+    <img src ="./images/lab2/Fig5.png">
     </p>
     <p align = "center">
     <i>Latency computation</i>
@@ -72,7 +72,7 @@ After completing this lab, you will be able to:
 
 ### Apply TRIPCOUNT Pragma
 #### Open the source file and uncomment pragma lines, re-synthesize, and observe the resources used as well as estimated latencies. Answer the questions listed in the detailed section of this step.
-1. To assist in providing loop-latency estimates, Vivado HLS provides a TRIPCOUNT directive which allows limits on the variables bounds to be specified by the user. In this design, such directives have been embedded in the source code, in the form of #pragma statements.
+1. To assist in providing loop-latency estimates, Vitis HLS provides a TRIPCOUNT directive which allows limits on the variables bounds to be specified by the user. In this design, such directives have been embedded in the source code, in the form of #pragma statements.
 
 2. Uncomment the #pragma lines (50, 53, 90, 93, 130, 133) to define the loop bounds and save the file.
 
@@ -146,6 +146,9 @@ After completing this lab, you will be able to:
 * RGB2YUV_LOOP_X loop body latency = 8962 cycles
 * RGB2YUV_LOOP_X total loop latency = 8962 x 1920 =17207040 cycles
 * 1 exit clock for the loop = 17207041 cycle
+
+### Remove the pipeline optimization done by Vitis HLS automatically by adding pipeline off pragma
+
 
 ### Turn OFF INLINE and Apply PIPELINE Directive
 #### Create a new solution by copying the previous solution settings. Prevent the automatic INLINE and apply PIPELINE directive. Generate the solution and understand the output.
