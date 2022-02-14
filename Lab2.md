@@ -212,9 +212,9 @@ After completing this lab, you will be able to:
     </p>
 
 ### Apply DATAFLOW Directive and Configuration Command
-#### Create a new solution by copying the previous solution (Solution2) settings. Apply DATAFLOW directive. Generate the solution and understand the output.
+#### Create a new solution by copying the previous solution (Solution3) settings. Apply DATAFLOW directive. Generate the solution and understand the output.
 1. Select **Project > New Solution** or click on button from the tools bar.
-2. A *Solution Configuration* dialog box will appear. Click the **Finish** button (with copy from Solution3 selected).
+2. A *Solution Configuration* dialog box will appear. Click the **Finish** button (with copy from Solution4 selected).
 3. Close all inactive solution windows by selecting **Project > Close Inactive Solution Tabs**.
 4. Make sure that the **yuv_filter.c** source is opened in the information pane and select the *Directive* tab.
 5. Select function yuv_filter in the *Directive* pane, right-click on it and select **Insert Directive...**
@@ -223,7 +223,7 @@ After completing this lab, you will be able to:
 8. When the synthesis is completed, the synthesis report is automatically opened.
 9. Observe additional information, **Dataflow** Type, in the *Performance Estimates* section is mentioned.
     <p align="center">
-    <img src ="./images/lab2/Figure15.png">
+    <img src ="./images/lab2/Fig15.png">
     </p>
     <p align = "center">
     <i>Performance estimate after DATAFLOW directive applied</i>
@@ -236,7 +236,7 @@ that the design can achieve close to the theoretical limit (1920x1280 = 2457600)
 processing one pixel every clock cycle.    
 10. Scrolling down into the *Utilization Estimates* section, observe that the number of BRAMs required has doubled. This is due to the default ping-pong buffering in dataflow.
     <p align="center">
-    <img src ="./images/lab2/Figure16.png">
+    <img src ="./images/lab2/Fig16.png">
     </p>
     <p align = "center">
     <i>Resource estimate with DATAFLOW directive applied</i>
@@ -249,7 +249,7 @@ accommodate the largest producer or consumer array.
 this design has data accesses which are fully sequential, FIFOs can be used. Another
 advantage to using FIFOs is that the size of the FIFOs can be directly controlled (not possible
 in ping-pong buffers where random accesses are allowed).
-11. The memory buffers type can be selected using Vivado HLS Configuration command.
+11. The memory buffers type can be selected using Vitis HLS Configuration command.
 
 #### Apply Dataflow configuration command, generate the solution, and observe the improved resources utilization.
 1. Select **Solution > Solution Settings…** to access the configuration command settings.
@@ -309,7 +309,7 @@ In this lab, you learned that even though this design could not be pipelined at 
     Worst case latency: **2457610**   
     Number of DSP48E used: **4**   
     Number of FFs used: **255**   
-    Number of LUTs used: **423**   
+    Number of LUTs used: **423**  
 
 
 
