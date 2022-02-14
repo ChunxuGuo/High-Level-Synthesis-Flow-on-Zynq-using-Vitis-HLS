@@ -78,7 +78,7 @@ After completing this lab, you will be able to:
 
 3. Synthesize the design by selecting **Solution > Run C Synthesis > Active Solution**. View the synthesis report when the process is completed.
     <p align="center">
-    <img src ="./images/lab2/Figure6.png">
+    <img src ="./images/lab2/Fig6.png">
     </p>
     <p align = "center">
     <i>Latency computation after applying TRIPCOUNT pragma</i>
@@ -93,34 +93,23 @@ After completing this lab, you will be able to:
     Number of FFs used:   
     Number of LUTs used:  
 
-4. Scroll the *Console* window and note that yuv_scale function is automatically inline into the yuv_filter function.
+4. Expand the **Module & loop** and note the latency and trip count numbers for the yuv_scale function. Note that the iteration latency of YUV_SCALE_LOOP_Y is 6x the specified TRIPCOUNT, implying that 6 cycles are used for each of the iteration of the loop.
     <p align="center">
-    <img src ="./images/lab2/Figure7.png">
-    </p>
-    <p align = "center">
-    <i>Vivado HLS automatically inlining function</i>
-    </p>
-
-5. Observe that there are three entries – rgb2yuv.rpt, yuv_filter.rpt, and yuv2rgb.rpt under the syn report folder in the Explorer view. There is no entry for yuv_scale.rpt since the function was inlined into the yuv_filter function.
-    You can access lower level module’s report by either traversing down in the top-level report under components (under Utilization Estimates > Details > Component) or from the reports container in the project explorer.
-
-6. Expand the **Summary** of loop latency and note the latency and trip count numbers for the yuv_scale function. Note that the YUV_SCALE_LOOP_Y loop latency is 6x the specified TRIPCOUNT, implying that 6 cycles are used for each of the iteration of the loop.
-    <p align="center">
-    <img src ="./images/lab2/Figure8.png">
+    <img src ="./images/lab2/Fig8.png">
     </p>
     <p align = "center">
     <i>Loop latency</i>
     </p>
 
-7. You can verify this by opening an analysis perspective view, expanding the **YUV_SCALE_LOOP_X** entry, and then expanding the **YUV_SCALE_LOOP_Y** entry.
+5. You can verify this by opening the Schedule Viewer, and expand the **YUV_SCALE_LOOP_X** entry.
     <p align="center">
-    <img src ="./images/lab2/Figure9.png">
+    <img src ="./images/lab2/Fig9.png">
     </p>
     <p align = "center">
     <i>Design analysis view of the YUV_SCALE_LOOP_Y loop</i>
     </p>
 
-8. In the report tab, expand **Detail > Instance** section of the *Utilization Estimates* and click on the **grp_rgb2yuv_fu_244 (rgb2yuv)** entry to open the report.
+6. In the report tab, expand and click on the **yuv_filter_Pipeline_RGB2YUV_LOOP_X_RGB2YUV_LOOP_Y** entry to open the report.
 
     **Question 2**  
     Answer the following question pertaining to rgb2yuv function.  
@@ -130,7 +119,7 @@ After completing this lab, you will be able to:
     Number of FFs used:  
     Number of LUTs used:  
 
-9. Similarly, open the *yuv2rgb* report.  
+7. Similarly, open the *yuv2rgb* report.  
 
     **Question 3**  
     Answer the following question pertaining to yuv2rgb function.   
@@ -140,18 +129,11 @@ After completing this lab, you will be able to:
     Number of FFs used:   
     Number of LUTs used:  
 
-10. For the *rgb2yuv* function the worst case latency is reported as **17207041** clock cycles. The reported latency can be estimated as follows.
-* RGB2YUV_LOOP_Y total loop latency = 7 x 1280 = 8960 cycles
-* 1 entry and 1 exit clock for loop RGB2YUV_LOOP_Y = 8962 cycles
-* RGB2YUV_LOOP_X loop body latency = 8962 cycles
-* RGB2YUV_LOOP_X total loop latency = 8962 x 1920 =17207040 cycles
-* 1 exit clock for the loop = 17207041 cycle
-
 ### Remove the pipeline optimization done by Vitis HLS automatically by adding pipeline off pragma
-
+1. Select **Project > New Solution** or click on the button from the tools bar buttons.
 
 ### Turn OFF INLINE and Apply PIPELINE Directive
-#### Create a new solution by copying the previous solution settings. Prevent the automatic INLINE and apply PIPELINE directive. Generate the solution and understand the output.
+#### Create a new solution by copying the previous solution settings. Apply the PIPELINE directive. Generate the solution and understand the output.
 1. Select **Project > New Solution** or click on the button from the tools bar buttons.
 2. A *Solution Configuration* dialog box will appear. Note that the check boxes of *Copy directives and constraints from solution* are checked with *solution1* selected. Click the **Finish** button to create a new solution with the default settings.
     <p align="center">
@@ -285,24 +267,24 @@ In this lab, you learned that even though this design could not be pipelined at 
 
 ## Answers
 1. **Answers for question 1:**  
-    Estimated clock period: **10.723 ns**   
-    Worst case latency: **51621125**   
-    Number of DSP48E used: **6**   
+    Estimated clock period: **6.960 ns**   
+    Worst case latency: **7372833**   
+    Number of DSP48E used: **8**   
     Number of BRAMs used: **12288**   
-    Number of FFs used: **679**   
-    Number of LUTs used: **1431**    
+    Number of FFs used: **932**   
+    Number of LUTs used: **1728**    
 2. **Answers for question 2:**  
-    Estimated clock period: **10.283 ns**   
-    Worst case latency: **17207041**   
+    Estimated clock period: **6.960 ns**   
+    Worst case latency: **2457608**   
     Number of DSP48E used: **3**   
-    Number of FFs used: **194**   
-    Number of LUTs used: **495**    
+    Number of FFs used: **358**   
+    Number of LUTs used: **592**    
 3. **Answers for question 3:**  
-    Estimated clock period: **10.703 ns**   
-    Worst case latency: **19664641**   
-    Number of DSP48E used: **3**   
-    Number of FFs used: **195**   
-    Number of LUTs used: **406**   
+    Estimated clock period: **6.960 ns**   
+    Worst case latency: **2457610**   
+    Number of DSP48E used: **4**   
+    Number of FFs used: **255**   
+    Number of LUTs used: **423**   
 
 
 
