@@ -269,7 +269,7 @@ in ping-pong buffers where random accesses are allowed).
     <img src ="./images/lab2/Fig18.png">
     </p>
     <p align = "center">
-    <i>Resource estimation after Dataflow configuration command</i>
+    <i>Latency estimation after Dataflow configuration command</i>
     </p>
 
 ## Conclusion
