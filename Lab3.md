@@ -10,25 +10,25 @@ After completing this lab, you will be able to:
 ## Steps
 
 ### Validate the Design from Command Line
-#### Validate your design from Vivado HLS command line.
-1. Click **Start > Xilinx Design Tools > Vivado HLS 2018.2 Command Prompt**.
-2. In the *Vivado HLS Command Prompt* window, change directory to **c:\xup\hls\labs\lab3**.
+#### Validate your design in the terminal.
+1. Open a terminal.
+2. Change directory to **/home/xup/hls/labs/lab3**.
     A self-checking program (dct_test.c) is provided. Using that we can validate the design. A Makefile is also provided. Using the Makefile, the necessary source files can be compiled and the compiled program can be executed. 
-3. In the *Vivado HLS Command Prompt* window, type **make** to compile and execute the program.
+3. In the terminal, type **make** to compile and execute the program.
     <p align="center">
-    <img src ="./images/lab3/Figure1.png">
+    <img src ="./images/lab3/Fig1.png">
     </p>
     <p align = "center">
     <i>Validating the design</i>
     </p>
     Note that the source files (dct.c and dct_test.c are compiled, then dct executable program was created, and then it was executed. The program tests the design and outputs Results are good message.
-4. Close the command prompt window by typing **exit**.
+4. Close the terminal.
 
 ### Create a New Project
 #### Create a new project in Vivado HLS GUI targeting xc7z020clg400-1.
-1. Select **Start > Xilinx Design Tools > Vivado HLS 2018.2**.
-2. In the Vivado HLS GUI, select **File > New Project**. The New Vivado HLS Project wizard opens.
-3. Click **Browse…** button of the Location field and browse to **c:\xup\hls\labs\lab3** and then click **OK**.
+1. Type **source /tools/Xilinx/Vitis/2021.2/settings64.sh** and then **vitis_hls** in the terminal.
+2. In the Vitis HLS GUI, click on **Create Project**. The **New Vitis HLS Project** wizard opens.
+3. Click **Browse…** button of the Location field and browse to **/home/xup/hls/labs/lab3** and then click **OK**.
 4. For Project Name, type **dct.prj** and click **Next**.
 5. In the Add/Remove Files for the source files, type **dct** as the function name (the provided source file contains the function, to be synthesized, called dct).
 6. Click the **Add Files…** button, select **dct.c** file from the **c:\xup\hls\labs\lab3** folder, and then click **Open**.
