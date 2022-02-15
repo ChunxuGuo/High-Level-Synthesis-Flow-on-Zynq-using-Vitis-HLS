@@ -253,10 +253,10 @@ in ping-pong buffers where random accesses are allowed).
 
 #### Apply Dataflow configuration command, generate the solution, and observe the improved resources utilization.
 1. Select **Solution > Solution Settings…** to access the configuration command settings.
-2. In the *Configuration Settings* dialog box, select **General** and click the **Add…** button.
-3. Select **config_dataflow** as the command using the drop-down button and **fifo** as the default_channel. Enter **2** as the fifo_depth. Click OK.
+2. In the *Configuration Settings* dialog box, expand **config_dataflow** folder.
+3. Set **fifo** as the default_channel. Enter **2** as the fifo_depth. Click OK.
     <p align="center">
-    <img src ="./images/lab2/Figure17.png">
+    <img src ="./images/lab2/Fig17.png">
     </p>
     <p align = "center">
     <i>Selecting Dataflow configuration command and FIFO as buffer</i>
@@ -264,28 +264,27 @@ in ping-pong buffers where random accesses are allowed).
 4. Click **OK** again.
 5. Click on the **Synthesis** button.
 6. When the synthesis is completed, the synthesis report is automatically opened.
-7. Note that the performance parameter has not changed; however, resource estimates show that the design is not using any BRAM and other resources (FF, LUT) usage has also reduced.
+7. Note that the latency has reduced. Since this design has data accesses which are fully sequential, the data can flow to next function without waiting all pixels to be processed.
     <p align="center">
-    <img src ="./images/lab2/Figure18.png">
+    <img src ="./images/lab2/Fig18.png">
     </p>
     <p align = "center">
     <i>Resource estimation after Dataflow configuration command</i>
     </p>
 
 ### Export and Implement the Design in Vivado HLS
-#### In Vivado HLS, export the design, selecting VHDL as a language, and run the implementation by selecting Evaluate option.
-1. In Vivado HLS, select **Solution > Export RTL** or click on the button on tools bar to open the dialog box so the desired implementation can be run.
-    An Export RTL Dialog box will open.
+#### In Vitis HLS, export the design, selecting VHDL as a language, and run the implementation by selecting Evaluate option.
+1. In Vitis HLS, select **Solution > Export RTL** to open the dialog box, click **OK**. After it is done, select**Solution > Implementation** so the desired implementation can be run.
 
-2. Click on the drop-down button of the **Evaluate Generated RTL** field and select **VHDL** as the language and click on the **Vivado synthesis, place and route** check box underneath.
-3. Click **OK** and the implementation run will begin. You can observe the progress in the Vivado HLS Console window. When the run is completed the implementation report will be displayed in the information pane.
+2. Click on the drop-down button of the **RTL** field and select **VHDL** as the language and click on the **RTL Synthesis, Place & Route** check box underneath.
+3. Click **OK** and the implementation run will begin. You can observe the progress in the Vitis HLS Console window. When the run is completed the implementation report will be displayed in the information pane.
     <p align="center">
-    <img src ="./images/lab2/Figure19.png">
+    <img src ="./images/lab2/Fig19.png">
     </p>
     <p align = "center">
     <i>Implementation results in Vivado HLS</i>
     </p>
-4. Close Vivado HLS by selecting **File > Exit**.
+4. Close Vitis HLS by selecting **File > Exit**.
 
 ## Conclusion
 In this lab, you learned that even though this design could not be pipelined at the top-level, a strategy of pipelining the individual loops and then using dataflow optimization to make the functions operate in parallel was able to achieve the same high throughput, processing one pixel per clock. When DATAFLOW directive is applied, the default memory buffers (of ping-pong type) are automatically inserted between the functions. Using the fact that the design used only sequential (streaming) data accesses allowed the costly memory buffers associated with dataflow optimization to be replaced with simple 2 element FIFOs using the Dataflow command configuration.
