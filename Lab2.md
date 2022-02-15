@@ -272,6 +272,7 @@ in ping-pong buffers where random accesses are allowed).
     <i>Resource estimation after Dataflow configuration command</i>
     </p>
 
+<p hidden>
 ### Export and Implement the Design in Vivado HLS
 #### In Vitis HLS, export the design, selecting VHDL as a language, and run the implementation by selecting Evaluate option.
 1. In Vitis HLS, select **Solution > Export RTL** to open the dialog box, click **OK**. After it is done, select**Solution > Implementation** so the desired implementation can be run.
@@ -285,6 +286,7 @@ in ping-pong buffers where random accesses are allowed).
     <i>Implementation results in Vivado HLS</i>
     </p>
 4. Close Vitis HLS by selecting **File > Exit**.
+</p>
 
 ## Conclusion
 In this lab, you learned that even though this design could not be pipelined at the top-level, a strategy of pipelining the individual loops and then using dataflow optimization to make the functions operate in parallel was able to achieve the same high throughput, processing one pixel per clock. When DATAFLOW directive is applied, the default memory buffers (of ping-pong type) are automatically inserted between the functions. Using the fact that the design used only sequential (streaming) data accesses allowed the costly memory buffers associated with dataflow optimization to be replaced with simple 2 element FIFOs using the Dataflow command configuration.
