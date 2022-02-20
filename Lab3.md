@@ -59,16 +59,16 @@ After completing this lab, you will be able to:
 #### Synthesize the design with the defaults. View the synthesis results and answer the question listed in the detailed section of this step.
 1. Select **Solution > Run C Synthesis > Active Solution** to start the synthesis process.
 2. When synthesis is completed, several report files will become accessible and the Synthesis Results will be displayed in the information pane.
-    Note that the Synthesis Report section in the Explorer view only shows dct_1d.rpt, dct_2d.rpt, and dct.rpt entries. The read_data and write_data functions reports are not listed. This is because these two functions are inlined. Verify this by scrolling up into the Vivado HLS Console view.
+    Note that the Synthesis Report section in the Explorer view only shows dct_csynth.rpt entries. The dct_1d, dct_2d, read_data and write_data functions reports are not listed. This is because these four functions are inlined. Verify this by scrolling up into the Vitis HLS Console view.
     <p align="center">
-    <img src ="./images/lab3/Figure4.png">
+    <img src ="./images/lab3/Fig4.png">
     </p>
     <p align = "center">
     <i>Inlining of read_data and write_data functions</i>
     </p> 
-3. The *Synthesis Report* shows the performance and resource estimates as well as estimated latency in the design. Note that the design is not optimized nor is pipelined.
+3. The *Synthesis Report* shows the performance and resource estimates as well as estimated latency in the design. Note that the design is already pipelined.
     <p align="center">
-    <img src ="./images/lab3/Figure5.png">
+    <img src ="./images/lab3/Fig5.png">
     </p>
     <p align = "center">
     <i>Synthesis report</i>
@@ -95,7 +95,7 @@ After completing this lab, you will be able to:
 
 ### Run Co-Simulation
 #### Run the Co-simulation, selecting Verilog. Verify that the simulation passes.
-1. Select **Solution > Run C/RTL Co-simulation** or click on the ![Co-simulation](images/lab3/Co-simulation.png) button on tools bar to open the dialog box so the desired simulations can be run.
+1. Select **Solution > Run C/RTL Co-simulation** to open the dialog box so the desired simulations can be run.
     A C/RTL Co-simulation Dialog box will open.
 
 2. Select the **Verilog** option, and click **OK** to run the Verilog simulation using XSIM simulator. The RTL Co-simulation will run, generating and compiling several files, and then simulating the design. In the console window you can see the progress and also a message that the test is passed.
@@ -385,8 +385,8 @@ loops. The Analysis perspective and console logs can provide insight on what is 
 ## Answers
 **Answers for question 1:**  
 Estimated clock period: **6.508 ns**   
-Worst case latency: **3959 clock cycles**   
-Number of DSP48E used: **1**   
-Number of BRAMs used: **5**   
-Number of FFs used: **278**   
-Number of LUTs used: **982 ** 
+Worst case latency: **412 clock cycles**   
+Number of DSP48E used: **6**   
+Number of BRAMs used: **7**   
+Number of FFs used: **1001**   
+Number of LUTs used: **1627** 
