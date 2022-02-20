@@ -29,7 +29,7 @@ After completing this lab, you will be able to:
 1. Type **source /tools/Xilinx/Vitis/2021.2/settings64.sh** and then **vitis_hls** in the terminal.
 2. In the Vitis HLS GUI, click on **Create Project**. The **New Vitis HLS Project** wizard opens.
 3. Click **Browse…** button of the Location field and browse to **/home/xup/hls/labs/lab3** and then click **OK**.
-4. For Project Name, type **dct.prj** and click **Next**.
+4. For Project Name, type **dct** and click **Next**.
 5. In the Add/Remove Files for the source files, type **dct** as the function name (the provided source file contains the function, to be synthesized, called dct).
 6. Click the **Add Files…** button, select **dct.c** file from the **/home/xup/hls/labs/lab3** folder, and then click **Open**.
 7. Click **Next**.
@@ -57,7 +57,7 @@ After completing this lab, you will be able to:
 
 ### Synthesize the Design
 #### Synthesize the design with the defaults. View the synthesis results and answer the question listed in the detailed section of this step.
-1. Select **Solution > Run C Synthesis > Active Solution** or click on the ![synthesis](images/lab3/synthesis.png)button on tools bar to start the synthesis process.
+1. Select **Solution > Run C Synthesis > Active Solution** to start the synthesis process.
 2. When synthesis is completed, several report files will become accessible and the Synthesis Results will be displayed in the information pane.
     Note that the Synthesis Report section in the Explorer view only shows dct_1d.rpt, dct_2d.rpt, and dct.rpt entries. The read_data and write_data functions reports are not listed. This is because these two functions are inlined. Verify this by scrolling up into the Vivado HLS Console view.
     <p align="center">
