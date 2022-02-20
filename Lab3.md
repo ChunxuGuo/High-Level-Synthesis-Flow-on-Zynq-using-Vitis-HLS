@@ -25,15 +25,15 @@ After completing this lab, you will be able to:
 4. Close the terminal.
 
 ### Create a New Project
-#### Create a new project in Vivado HLS GUI targeting xc7z020clg400-1.
+#### Create a new project in Vitis HLS GUI targeting xc7z020clg400-1.
 1. Type **source /tools/Xilinx/Vitis/2021.2/settings64.sh** and then **vitis_hls** in the terminal.
 2. In the Vitis HLS GUI, click on **Create Project**. The **New Vitis HLS Project** wizard opens.
 3. Click **Browse…** button of the Location field and browse to **/home/xup/hls/labs/lab3** and then click **OK**.
 4. For Project Name, type **dct.prj** and click **Next**.
 5. In the Add/Remove Files for the source files, type **dct** as the function name (the provided source file contains the function, to be synthesized, called dct).
-6. Click the **Add Files…** button, select **dct.c** file from the **c:\xup\hls\labs\lab3** folder, and then click **Open**.
+6. Click the **Add Files…** button, select **dct.c** file from the **/home/xup/hls/labs/lab3** folder, and then click **Open**.
 7. Click **Next**.
-8. In the *Add/Remove Files* for the testbench, click the **Add Files…** button, select **dct_test.c**, **in.dat**, **out.golden.dat** files from the **c:\xup\hls\labs\lab3** folder and click **Open**.
+8. In the *Add/Remove Testbench Files* for the testbench, click the **Add Files…** button, select **dct_test.c**, **in.dat**, **out.golden.dat** files from the **/home/xup/hls/labs/lab3** folder and click **Open**.
 9. Click **Next**.
 10. In the Solution Configuration page, leave Solution Name field as solution1 and set the clock period as 10. Leave Uncertainty field blank.
 11. Click on Part’s Browse button, and select the following filters, using the Parts Specify option, to select **xc7z020clg400-1**.
