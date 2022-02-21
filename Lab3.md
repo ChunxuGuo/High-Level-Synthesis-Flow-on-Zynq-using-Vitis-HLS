@@ -59,12 +59,12 @@ After completing this lab, you will be able to:
 #### Synthesize the design with the defaults. View the synthesis results and answer the question listed in the detailed section of this step.
 1. Select **Solution > Run C Synthesis > Active Solution** to start the synthesis process.
 2. When synthesis is completed, several report files will become accessible and the Synthesis Results will be displayed in the information pane.
-    Note that the Synthesis Report section in the Explorer view only shows dct_csynth.rpt entries. The dct_1d, dct_2d, read_data and write_data functions reports are not listed. This is because these four functions are inlined. Verify this by scrolling up into the Vitis HLS Console view.
+    The dct_1d, dct_2d, read_data and write_data functions are inlined. Verify this by scrolling up into the Vitis HLS Console view.
     <p align="center">
     <img src ="./images/lab3/Fig4.png">
     </p>
     <p align = "center">
-    <i>Inlining of read_data and write_data functions</i>
+    <i>Inlining of dct_1d, dct_2d, read_data and write_data functions</i>
     </p> 
 3. The *Synthesis Report* shows the performance and resource estimates as well as estimated latency in the design. Note that the design is already pipelined.
     <p align="center">
@@ -91,16 +91,15 @@ After completing this lab, you will be able to:
     <i>Generated interface signals</i>
     </p> 
     You can see ap_clk, ap_rst are automatically added. The ap_start, ap_done, ap_idle, and ap_ready are top-level signals used as handshaking signals to indicate when the design is able to accept next computation command (ap_idle), when the next computation is started (ap_start), and when the computation is completed (ap_done). The top-level function has input and output arrays, hence an ap_memory interface is generated for each of them.
-6. Open *dct_1d.rpt* and *dct_2d.rpt* files either using the *Explorer* view or by using a hyperlink at the bottom of the *dct.rpt* in the information view. The report for dct_2d clearly indicates that most of this design cycles (3668) are spent doing the row and column DCTs. Also the dct_1d report indicates that the latency is 209 clock cycles ((24+2)*8+1).
 
 ### Run Co-Simulation
 #### Run the Co-simulation, selecting Verilog. Verify that the simulation passes.
 1. Select **Solution > Run C/RTL Co-simulation** to open the dialog box so the desired simulations can be run.
     A C/RTL Co-simulation Dialog box will open.
 
-2. Select the **Verilog** option, and click **OK** to run the Verilog simulation using XSIM simulator. The RTL Co-simulation will run, generating and compiling several files, and then simulating the design. In the console window you can see the progress and also a message that the test is passed.
+2. Select the **Verilog** option, and click **OK** to run the Verilog simulation using Vivado XSIM simulator. The RTL Co-simulation will run, generating and compiling several files, and then simulating the design. In the console window you can see the progress and also a message that the test is passed.
     <p align="center">
-    <img src ="./images/lab3/Figure7.png">
+    <img src ="./images/lab3/Fig7.png">
     </p>
     <p align = "center">
     <i>RTL Co-Simulation results</i>
@@ -380,13 +379,13 @@ loop is unrolled, resources utilization increases as operations are done concurr
 may improve performance but will increase BRAM utilization. When INLINE directive is applied to a
 function, the lower level hierarchy is automatically dissolved. When DATAFLOW directive is applied, the
 default memory buffers (of ping-pong type) are automatically inserted between the top-level functions and
-loops. The Analysis perspective and console logs can provide insight on what is going on.
+loops. The console logs can provide insight on what is going on.
 
 ## Answers
 **Answers for question 1:**  
 Estimated clock period: **6.508 ns**   
-Worst case latency: **412 clock cycles**   
-Number of DSP48E used: **6**   
-Number of BRAMs used: **7**   
-Number of FFs used: **1001**   
-Number of LUTs used: **1627** 
+Worst case latency: **423 clock cycles**   
+Number of DSP48E used: **17**   
+Number of BRAMs used: **16**   
+Number of FFs used: **929**   
+Number of LUTs used: **2012** 
