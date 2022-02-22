@@ -166,7 +166,7 @@ After completing this lab, you will be able to:
 
 ### Apply PIPELINE Directive
 #### Create a new solution by copying the previous solution settings. Apply the PIPELINE directive. Generate the solution and understand the output.
-1. Select **Project > New Solution** or click on the button from the tools bar buttons.
+1. Select **Project > New Solution**.
 2. A *Solution Configuration* dialog box will appear. Click the **Finish** button (with copy from Solution2 selected).
 3. Make sure that the **yuv_filter.c** source is opened and visible in the information pane, and click on the **Directive** tab.
 4. Select pragma *HLS PIPELINE off* of **RGB2YUV_LOOP_Y** in the directives pane, right-click on it, and select **Modify Directive**
@@ -213,7 +213,7 @@ After completing this lab, you will be able to:
 
 ### Apply DATAFLOW Directive and Configuration Command
 #### Create a new solution by copying the previous solution (Solution3) settings. Apply DATAFLOW directive. Generate the solution and understand the output.
-1. Select **Project > New Solution** or click on button from the tools bar.
+1. Select **Project > New Solution**.
 2. A *Solution Configuration* dialog box will appear. Click the **Finish** button (with copy from Solution4 selected).
 3. Close all inactive solution windows by selecting **Project > Close Inactive Solution Tabs**.
 4. Make sure that the **yuv_filter.c** source is opened in the information pane and select the *Directive* tab.
