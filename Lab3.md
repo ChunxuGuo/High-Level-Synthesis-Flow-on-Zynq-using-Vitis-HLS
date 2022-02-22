@@ -114,7 +114,7 @@ After completing this lab, you will be able to:
     <p align = "center">
     <i>Creating a new Solution after copying the existing solution</i>
     </p>
-3. Make sure that the **yuv_filter.c** source is opened and visible in the information pane, and click on the **Directive** tab.
+3. Make sure that the **dct.c** source is opened and visible in the information pane, and click on the **Directive** tab.
 4. Select function **RGB2YUV_LOOP_X** in the directives pane, right-click on it, and select **Insert Directive...**
 5. Click on the drop-down button of the *Directive* field. A pop-up menu shows up listing various directives. Select **PIPELINE** directive.
 6. In the *Vitis HLS Directive Editor* dialog box, click on the **off** option to turn off the automatic pipelining. Make sure that the *Directive File* is selected as destination. Click **OK**.
