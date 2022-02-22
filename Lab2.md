@@ -146,7 +146,7 @@ After completing this lab, you will be able to:
     <img src ="./images/lab2/Fig10a.png">
     </p>
     <p align = "center">
-    <i>Add pipeline off directive</i>
+    <i>Add PIPELINE off directive</i>
     </p>
 7. Similarly, apply the **PIPELINE off** directive to **YUV2RGB_LOOP_X**, **YUV2RGB_LOOP_Y**, **YUV_SCALE_LOOP_X**, **YUV_SCALE_LOOP_Y** and **RGB2YUV_LOOP_Y** objects. At this point, the *Directive* tab should look like as follows.
     <p align="center">
@@ -176,7 +176,7 @@ After completing this lab, you will be able to:
     <img src ="./images/lab2/Fig11.png">
     </p>
     <p align = "center">
-    <i>Turning OFF the inlining function</i>
+    <i>Add PIPELINE directive</i>
     </p>
 * When an object (function or loop) is pipelined, all the loops below it, down through the hierarchy, will be automatically unrolled.
 * In order for a loop to be unrolled it must have fixed bounds: all the loops in this design have variable bounds, defined by an input argument variable to the top-level function.
