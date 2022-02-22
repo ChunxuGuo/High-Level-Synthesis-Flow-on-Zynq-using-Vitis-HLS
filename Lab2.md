@@ -161,7 +161,7 @@ After completing this lab, you will be able to:
     <img src ="./images/lab2/Fig10c.png">
     </p>
     <p align = "center">
-    <i>Performance comparison after applying PIPELINE off directive</i>
+    <i>Performance after applying PIPELINE off directive</i>
     </p>
 
 ### Apply PIPELINE Directive
