@@ -169,7 +169,7 @@ After completing this lab, you will be able to:
 1. Select **Project > New Solution**.
 2. A *Solution Configuration* dialog box will appear. Click the **Finish** button (with copy from Solution2 selected).
 3. Make sure that the **yuv_filter.c** source is opened and visible in the information pane, and click on the **Directive** tab.
-4. Select pragma *HLS PIPELINE off* of **RGB2YUV_LOOP_Y** in the directives pane, right-click on it, and select **Modify Directive**
+4. Select the pragma *HLS PIPELINE off* of **RGB2YUV_LOOP_Y** in the directives pane, right-click on it, and select **Modify Directive**
 5. Click on the drop-down button of the *Directive* field. A pop-up menu shows up listing various directives. Select **INLINE** directive.
 6. In the *Vivado HLS Directive Editor* dialog box, click the **off** option to turn on the pipelining. Make sure that the *Directive File* is selected as destination. Click **OK**.
     <p align="center">
