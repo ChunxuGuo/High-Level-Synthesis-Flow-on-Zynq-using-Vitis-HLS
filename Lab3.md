@@ -105,6 +105,41 @@ After completing this lab, you will be able to:
     <i>RTL Co-Simulation results</i>
     </p> 
 
+### Remove the pipeline optimization done by Vitis HLS automatically by adding pipeline off pragma
+1. Select **Project > New Solution**.
+2. A *Solution Configuration* dialog box will appear. Note that the check boxes of *Copy directives and constraints from solution* are checked with *solution1* selected. Click the **Finish** button to create a new solution with the default settings.
+    <p align="center">
+    <img src ="./images/lab2/Fig10.png">
+    </p>
+    <p align = "center">
+    <i>Creating a new Solution after copying the existing solution</i>
+    </p>
+3. Make sure that the **yuv_filter.c** source is opened and visible in the information pane, and click on the **Directive** tab.
+4. Select function **RGB2YUV_LOOP_X** in the directives pane, right-click on it, and select **Insert Directive...**
+5. Click on the drop-down button of the *Directive* field. A pop-up menu shows up listing various directives. Select **PIPELINE** directive.
+6. In the *Vitis HLS Directive Editor* dialog box, click on the **off** option to turn off the automatic pipelining. Make sure that the *Directive File* is selected as destination. Click **OK**.
+    <p align="center">
+    <img src ="./images/lab2/Fig10a.png">
+    </p>
+    <p align = "center">
+    <i>Add pipeline off directive</i>
+    </p>
+7. Similarly, apply the **PIPELINE off** directive to **YUV2RGB_LOOP_X**, **YUV2RGB_LOOP_Y**, **YUV_SCALE_LOOP_X**, **YUV_SCALE_LOOP_Y** and **RGB2YUV_LOOP_Y** objects. At this point, the *Directive* tab should look like as follows.
+    <p align="center">
+    <img src ="./images/lab2/Fig10b.png">
+    </p>
+    <p align = "center">
+    <i>PIPELINE directive applied</i>
+    </p>
+8. Click on the **Synthesis** button.
+9. When the synthesis is completed, report shows the performance and area without the automatic optimization of Vitis HLS.
+    <p align="center">
+    <img src ="./images/lab2/Fig10c.png">
+    </p>
+    <p align = "center">
+    <i>PIPELINE directive applied</i>
+    </p>
+
 ### Apply PIPELINE Directive
 #### Create a new solution by copying the previous solution settings. Apply the PIPELINE directive to DCT_Inner_Loop, Xpose_Row_Inner_Loop, Xpose_Col_Inner_Loop, RD_Loop_Col, and WR_Loop_Col. Generate the solution and analyze the output.
 1. Select **Project > New Solution** or click on the ![new_solotion](images/lab3/new_solotion.png) button from the tools bar buttons.
