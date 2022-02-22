@@ -130,7 +130,7 @@ After completing this lab, you will be able to:
     Number of LUTs used:  
 
 ### Remove the pipeline optimization done by Vitis HLS automatically by adding pipeline off pragma
-1. Select **Project > New Solution** or click on the button from the tools bar buttons.
+1. Select **Project > New Solution**.
 2. A *Solution Configuration* dialog box will appear. Note that the check boxes of *Copy directives and constraints from solution* are checked with *solution1* selected. Click the **Finish** button to create a new solution with the default settings.
     <p align="center">
     <img src ="./images/lab2/Fig10.png">
