@@ -153,7 +153,7 @@ After completing this lab, you will be able to:
     <img src ="./images/lab2/Fig10b.png">
     </p>
     <p align = "center">
-    <i>PIPELINE directive applied</i>
+    <i>PIPELINE off directive applied</i>
     </p>
 8. Click on the **Synthesis** button.
 9. When the synthesis is completed, report shows the performance and area without the automatic optimization of Vitis HLS.
@@ -161,7 +161,7 @@ After completing this lab, you will be able to:
     <img src ="./images/lab2/Fig10c.png">
     </p>
     <p align = "center">
-    <i>PIPELINE directive applied</i>
+    <i>Performance comparison after applying PIPELINE off directive</i>
     </p>
 
 ### Apply PIPELINE Directive
