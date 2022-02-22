@@ -145,7 +145,7 @@ After completing this lab, you will be able to:
 1. Select **Project > New Solution**.
 2. A *Solution Configuration* dialog box will appear. Click the **Finish** button (with copy from Solution1 selected).
 3. Make sure that the **dct.c** source is opened in the information pane and click on the **Directive** tab.
-4. Select the pragma HLS PIPELINE off of**DCT_Inner_Loop** of the dct_1d function in the *Directive* pane, right-click on it and select **Modify Directive**
+4. Select the pragma HLS PIPELINE off of **DCT_Inner_Loop** of the dct_1d function in the *Directive* pane, right-click on it and select **Modify Directive**
 5. In the Vivado HLS Directive Editor dialog box, click the off option to turn on the pipelining. Make sure that the Directive File is selected as destination. Click OK.
 6. Leave II (Initiation Interval) blank as Vivado HLS will try for an II=1, one new input every clock cycle.
 7. Click **OK**.
