@@ -170,8 +170,7 @@ After completing this lab, you will be able to:
 2. A *Solution Configuration* dialog box will appear. Click the **Finish** button (with copy from Solution2 selected).
 3. Make sure that the **yuv_filter.c** source is opened and visible in the information pane, and click on the **Directive** tab.
 4. Select the pragma *HLS PIPELINE off* of **RGB2YUV_LOOP_Y** in the directives pane, right-click on it, and select **Modify Directive**
-5. Click on the drop-down button of the *Directive* field. A pop-up menu shows up listing various directives. Select **INLINE** directive.
-6. In the *Vivado HLS Directive Editor* dialog box, click the **off** option to turn on the pipelining. Make sure that the *Directive File* is selected as destination. Click **OK**.
+5. In the *Vivado HLS Directive Editor* dialog box, click the **off** option to turn on the pipelining. Make sure that the *Directive File* is selected as destination. Click **OK**.
     <p align="center">
     <img src ="./images/lab2/Fig11.png">
     </p>
@@ -183,19 +182,19 @@ After completing this lab, you will be able to:
 * Note that the TRIPCOUNT directive on the loops only influences reporting, it does not set bounds for synthesis.
 * Neither the top-level function nor any of the sub-functions are pipelined in this example.
 * The pipeline directive must be applied to the inner-most loop in each function – the innermost loops have no variable-bounded loops inside which are required to be unrolled and the outer loop will simply keep the inner loop fed with data.
-7. Leave *II* (Initiation Interval) blank as Vivado HLS will try for an II=1, one new input every clock cycle.
-8. Click **OK**.
-9. Similarly, apply the **PIPELINE** directive to **YUV2RGB_LOOP_Y** and **YUV_SCALE_LOOP_Y** objects, but remove the **PIPELINE** directive of **YUV2RGB_LOOP_X**, **YUV_SCALE_LOOP_X** and **RGB2YUV_LOOP_X**. At this point, the *Directive* tab should look like as follows.
+6. Leave *II* (Initiation Interval) blank as Vivado HLS will try for an II=1, one new input every clock cycle.
+7. Click **OK**.
+8. Similarly, apply the **PIPELINE** directive to **YUV2RGB_LOOP_Y** and **YUV_SCALE_LOOP_Y** objects, but remove the **PIPELINE** directive of **YUV2RGB_LOOP_X**, **YUV_SCALE_LOOP_X** and **RGB2YUV_LOOP_X**. At this point, the *Directive* tab should look like as follows.
     <p align="center">
     <img src ="./images/lab2/Fig12.png">
     </p>
     <p align = "center">
     <i>PIPELINE directive applied</i>
     </p>
-10. Click on the **Synthesis** button.
-11. When the synthesis is completed, select **Project > Compare Reports…** to compare the two solutions.
-12. Select *Solution2* and *Solution3* from the **Available Reports**, and click on the **Add>>** button.
-13. Observe that the latency reduced.
+9. Click on the **Synthesis** button.
+10. When the synthesis is completed, select **Project > Compare Reports…** to compare the two solutions.
+11. Select *Solution2* and *Solution3* from the **Available Reports**, and click on the **Add>>** button.
+12. Observe that the latency reduced.
     <p align="center">
     <img src ="./images/lab2/Fig13.png">
     </p>
@@ -203,7 +202,7 @@ After completing this lab, you will be able to:
     <i>Performance comparison after pipelining</i>
     </p>
     In Solution2, the total loop latency of the inner-most loop was loop_body_latency x loop iteration count, whereas in Solution3 the new total loop latency of the inner-most loop is loop_body_latency + loop iteration count.
-14. Scroll down in the comparison report to view the resources utilization. Observe that the FFs, LUTs, and DSP48E utilization increased whereas BRAM remained same.
+13. Scroll down in the comparison report to view the resources utilization. Observe that the FFs, LUTs, and DSP48E utilization increased whereas BRAM remained same.
     <p align="center">
     <img src ="./images/lab2/Fig14.png">
     </p>
