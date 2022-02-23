@@ -241,7 +241,7 @@ After completing this lab, you will be able to:
        </p>
 12. Open **dct_1d2** report and observe that the pipeline initiation interval (II) is four (4) cycles, not one (1) as might be hoped and there are now 8 BRAMs being used for the coefficient table.
     Looking closely at the synthesis log, notice that the coefficient table was automatically partitioned, resulting in 8 separate ROMs: this helped reduce the latency by keeping the unrolled computation loop fed, however the input arrays to the dct_1d function were not automatically partitioned.
-    The reason the II is four (4) rather than the eight (8) one might expect, is because Vivado HLS automatically uses dual-port RAMs, when beneficial to scheduling operations.
+    The reason the II is four (4) rather than the eight (8) one might expect, is because Vitis HLS automatically uses dual-port RAMs, when beneficial to scheduling operations.
     <p align="center">
     <img src ="./images/lab3/Figure18.png">
     </p>
