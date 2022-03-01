@@ -200,7 +200,7 @@ After completing this lab, you will be able to:
 
 ### Create a new solution by copying the previous solution settings. Apply fine-grain parallelism of performing multiply and add operations of the inner loop of dct_1d using PIPELINE directive by moving the PIPELINE directive from inner loop to the outer loop of dct_1d. Generate the solution and analyze the output.
 1. Select **Project > New Solution**.
-2. A *Solution Configuration* dialog box will appear. Click the **Finish** button (with Solution2 selected).
+2. A *Solution Configuration* dialog box will appear. Click the **Finish** button (with Solution3 selected).
 3. Select **PIPELINE** directive of **DCT_Inner_Loop** of the **dct_1d** function in the Directive pane, right-click on it and select **Remove** Directive.
 4. Select **DCT_Outer_Loop** of the **dct_1d** function in the Directive pane, right-click on it and select **Insert Directive...**
 5. A pop-up menu shows up listing various directives. Select **PIPELINE** directive.
@@ -214,17 +214,17 @@ After completing this lab, you will be able to:
     By pipelining an outer loop, all inner loops will be unrolled automatically (if legal), so there is no need to explicitly apply an UNROLL directive to DCT_Inner_Loop. Simply move the pipeline to the outer loop: the nested loop will still be pipelined but the operations in the inner-loop body will operate concurrently.
 7. Click on the **Synthesis** button.
 8. When the synthesis is completed, select **Project > Compare Reports…** to compare the two solutions.
-9. Select Solution2 and Solution3 from the **Available Reports**, click on the **Add>>** button, and then click **OK**.
-10. Observe that the latency reduced from *1851* to *875* clock cycles.
+9. Select Solution3 and Solution4 from the **Available Reports**, click on the **Add>>** button, and then click **OK**.
+10. Observe that the latency reduced from *2451* to *643* clock cycles.
     <p align="center">
-    <img src ="./images/lab3/Figure16.png">
+    <img src ="./images/lab3/Fig16.png">
     </p>
     <p align = "center">
     <i>Performance comparison after pipelining</i>
     </p>
-11. Scroll down in the comparison report to view the resources utilization. Observe that the utilization of all resources (except BRAM) increased. Since the DCT_Inner_Loop was unrolled, the parallel computation requires 8 DSP48E.
+11. Scroll down in the comparison report to view the resources utilization. Observe that the utilization of DSP and FF increased. Since the DCT_Inner_Loop was unrolled, the parallel computation requires 8 DSP48E.
        <p align="center">
-       <img src ="./images/lab3/Figure17.png">
+       <img src ="./images/lab3/Fig17.png">
        </p>
        <p align = "center">
        <i>Resources utilization after pipelining</i>
@@ -233,19 +233,19 @@ After completing this lab, you will be able to:
     Looking closely at the synthesis log, notice that the coefficient table was automatically partitioned, resulting in 8 separate ROMs: this helped reduce the latency by keeping the unrolled computation loop fed, however the input arrays to the dct_1d function were not automatically partitioned.
     The reason the II is four (4) rather than the eight (8) one might expect, is because Vitis HLS automatically uses dual-port RAMs, when beneficial to scheduling operations.
     <p align="center">
-    <img src ="./images/lab3/Figure18.png">
+    <img src ="./images/lab3/Fig18.png">
     </p>
     <p align = "center">
     <i>Increased resource utilization of dct_1d</i>
     </p>
     <p align="center">
-    <img src ="./images/lab3/Figure19.png">
+    <img src ="./images/lab3/Fig19.png">
     </p>
     <p align = "center">
     <i> Automatic partitioning of dct_coeff_table</i>
     </p>
     <p align="center">
-    <img src ="./images/lab3/Figure20.png">
+    <img src ="./images/lab3/Fig20.png">
     </p>
     <p align = "center">
     <i>Initiation interval of 4</i>
