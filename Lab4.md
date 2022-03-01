@@ -3,7 +3,7 @@
 ## Objectives
 After completing this lab, you will be able to:
 * Understand the steps and directives involved in creating an IP-XACT adapter from a synthesized
-design in Vivado HLS
+design in Vitis HLS
 * Create a processor system using IP Integrator in Vivado
 * Integrate the generated IP-XACT adapter into the created processor system
 
@@ -21,16 +21,16 @@ This lab requires you to develop a peripheral core of the designed filter that c
 ## Steps
 
 ### Create a New Project 
-#### Create a new project in Vivado HLS targeting xc7z020clg400-1 device
-1. Select **Start > Xilinx Design Tools > Vivado HLS 2018.2**
+#### Create a new project in Vitis HLS targeting xc7z020clg400-1 device
+1. Type source /tools/Xilinx/Vitis/2021.2/settings64.sh and then vitis_hls in the terminal.
     A **Getting Started GUI** will appear.
-2. In the Getting Started section, click on *Create New Project*. The **New Vivado HLS Project** wizard opens.
-3. Click **Browse…** button of the *Location* field, browse to **c:\xup\hls\labs\lab4**, and then click **OK**.
-4. For *Project* Name, type **fir.prj** and click **Next**.
+2. In the Getting Started section, click on *Create Project*. The **New Vitis HLS Project** wizard opens.
+3. Click **Browse…** button of the *Location* field, browse to **/home/xup/hls/labs/lab4**, and then click **OK**.
+4. For *Project* Name, type **fir** and click **Next**.
 5. In the *Add/Remove Files* for the source files, type **fir** as the function name (the provided source file contains the function, to be synthesized, called fir).
-6. Click the *Add Files…* button, select **fir.c** and **fir_coef.dat** files from the **c:\xup\hls\labs\lab4** folder, and then click **Open**.
+6. Click the *Add Files…* button, select **fir.c** and **fir_coef.dat** files from the **/home/xup/hls/labs/lab4** folder, and then click **Open**.
 7. Click **Next**.
-8. In the *Add/Remove Files* for the testbench, click the *Add Files…* button, select **fir_test.c** file from the **c:\xup\hls\labs\lab4** folder and click **Open**.
+8. In the *Add/Remove Testbench Files* for the testbench, click the *Add Files…* button, select **fir_test.c** file from the **/home/xup/hls/labs/lab4** folder and click **Open**.
 9. Click **Next**.
 10. In the *Solution Configuration* page, leave *Solution* Name field as solution1 and make sure the clock period as 10. Leave Uncertainty field blank.
 11. Click on the Part’s Browse button and using the *Parts Specify* option, select **xc7z020clg400-1**.
@@ -53,7 +53,7 @@ This lab requires you to develop a peripheral core of the designed filter that c
      </p>
      The header file includes **ap_cint.h** so user defined data width (of arbitrary precision) can be used. It also defines number of taps (N), number of samples to be generated (in the testbench), and data types coef_t, data_t, and acc_t. The coef_t and data_t are short (16 bits). Since the algorithm iterates (multiply and accumulate) over 59 taps, there is a possibility of bit growth of 6 bits and hence acc_t is defined as int38. Since the acc_t is bigger than sample and coefficient width, they have to cast before being used (like in lines 16, 18, and 21 of fir.c).
 15. Double-click on the **fir_test.c** under the testbench folder to open its content in the information pane.
-     Notice that the testbench opens fir_impulse.dat in write mode, and sends an impulse (first sample being 0x8000.
+     Notice that the testbench opens fir_impulse.dat in write mode, and sends an impulse (first sample being 0x8000).
 
 ### Run C Simulation
 #### Run C simulation to observe the expected output.
