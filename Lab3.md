@@ -143,7 +143,7 @@ After completing this lab, you will be able to:
 ### Apply PIPELINE Directive
 #### Create a new solution by copying the previous solution settings. Apply the PIPELINE directive to DCT_Inner_Loop, Xpose_Row_Inner_Loop, Xpose_Col_Inner_Loop, RD_Loop_Col, and WR_Loop_Col. Generate the solution and analyze the output.
 1. Select **Project > New Solution**.
-2. A *Solution Configuration* dialog box will appear. Click the **Finish** button (with copy from Solution1 selected).
+2. A *Solution Configuration* dialog box will appear. Click the **Finish** button (with copy from Solution2 selected).
 3. Make sure that the **dct.c** source is opened in the information pane and click on the **Directive** tab.
 4. Select the pragma HLS PIPELINE off of **DCT_Inner_Loop** of the dct_1d function in the *Directive* pane, right-click on it and select **Modify Directive**
 5. In the Vivado HLS Directive Editor dialog box, click the off option to turn on the pipelining. Make sure that the Directive File is selected as destination. Click OK.
@@ -174,34 +174,24 @@ After completing this lab, you will be able to:
     <i>Resources utilization after pipelining</i>
     </p>
 
-#### Open the Analysis perspective and determine where most of the clock cycles are spend, i.e. where the large latencies are.
-1. Click on the *Open Analysis Perspective* ![Open Analysis Perspective](images/lab3/Open Analysis Perspective.png) button.
-2. In the *Module Hierarchy* pane, select the **dct** entry and observe the **RD_Loop_Row_RD_Loop_Col** and **WR_Loop_Row_WR_Loop_Col** entries in the *Performance Profile* pane. These are two nested loops flattened and given the new names formed by appending inner loop name to the outer loop name. You can also verify this by looking in the *Console* view message.
+#### Open the Schedule Viewer and determine where most of the clock cycles are spend, i.e. where the large latencies are.
+1. Click on the *Solution > Open Schedule Viewer* .
+2. Select the **dct** entry and observe the **RD_Loop_Row_RD_Loop_Col** and **WR_Loop_Row_WR_Loop_Col** entries in the *Performance & Resource Estimates*. These are two nested loops flattened and given the new names formed by appending inner loop name to the outer loop name. You can verify this by looking in the *Console* view message.
     <p align="center">
-    <img src ="./images/lab3/Figure11.png">
+    <img src ="./images/lab3/Fig11.png">
     </p>
     <p align = "center">
     <i>The console view content indicating loops flattening</i>
-    </p>
+3. In the *Performance & Resource Estimates* pane, expand all items. Notice that the most of the latency occurs is in **Row_DCT_Loop_DCT_Outer_Loop** and **Col_DCT_Loop_DCT_Outer_Loop** function.
     <p align="center">
-    <img src ="./images/lab3/Figure12.png">
+    <img src ="./images/lab3/Fig13.png">
     </p>
     <p align = "center">
-    <i>The performance profile at the dct function level</i>
+    <i>The Performance & Resource Estimates of dct</i>
     </p>
-3. In the *Module Hierarchy* pane, expand **dct > dct_2d**. Notice that the most of the latency occurs is
-    in **dct_2d** function.
-4. In the *Module Hierarchy* pane, notice that there still hierarchy exists in the **dct_2d** module. Expand
-   **dct > dct_2d > dct 1d2**, and select the **dct_1d2** entry.
+5. In the *Schedule Viewer* pane, select the **Col_DCT_Loop_DCT_Outer_Loop** entry, right-click on the **col_outbuf_addr_write_In19** (write) block in the **Schedule Viewer**, and select **Goto Source**. Notice that line 19 is highlighted which is preventing the flattening of the DCT_Outer_Loop.
     <p align="center">
-    <img src ="./images/lab3/Figure13.png">
-    </p>
-    <p align = "center">
-    <i>The dct_1d function performance profile</i>
-    </p>
-5. In the *Performance Profile* pane, select the **DCT_Inner_Loop** entry, right-click on the **node_60** (write) block in the **Schedule Viewer**, and select **Goto Source**. Notice that line 19 is highlighted which is preventing the flattening of the DCT_Outer_Loop.
-    <p align="center">
-    <img src ="./images/lab3/Figure14.png">
+    <img src ="./images/lab3/Fig14.png">
     </p>
     <p align = "center">
     <i>Understanding what is preventing DCT_Outer_Loop flattening</i>
