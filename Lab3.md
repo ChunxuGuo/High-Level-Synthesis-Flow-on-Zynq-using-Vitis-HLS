@@ -229,56 +229,27 @@ After completing this lab, you will be able to:
        <p align = "center">
        <i>Resources utilization after pipelining</i>
        </p>
-12. Open **dct_1d2** report and observe that the pipeline initiation interval (II) is four (4) cycles, not one (1) as might be hoped and there are now 8 BRAMs being used for the coefficient table.
-    Looking closely at the synthesis log, notice that the coefficient table was automatically partitioned, resulting in 8 separate ROMs: this helped reduce the latency by keeping the unrolled computation loop fed, however the input arrays to the dct_1d function were not automatically partitioned.
-    The reason the II is four (4) rather than the eight (8) one might expect, is because Vitis HLS automatically uses dual-port RAMs, when beneficial to scheduling operations.
-    <p align="center">
-    <img src ="./images/lab3/Fig18.png">
-    </p>
-    <p align = "center">
-    <i>Increased resource utilization of dct_1d</i>
-    </p>
-    <p align="center">
-    <img src ="./images/lab3/Fig19.png">
-    </p>
-    <p align = "center">
-    <i> Automatic partitioning of dct_coeff_table</i>
-    </p>
-    <p align="center">
-    <img src ="./images/lab3/Fig20.png">
-    </p>
-    <p align = "center">
-    <i>Initiation interval of 4</i>
-    </p>
 
-#### Perform design analysis by switching to the Analysis perspective and looking at the dct_1d2 performance view.
-1. Switch to the Analysis perspective, expand the Module Hierarchy entries, and select the **dct_1d2** entry.
-2. Expand, if necessary, the **Profile** tab entries and notice that the DCT_Outer_Loop is now pipelined and there is no DCT_Inner_Loop entry.
+#### Perform design analysis and looking at the dct performance view.
+1. Switch to the **Performance & Resource Estimates** in Synthesis Summary.
+2. Expand, if necessary, and notice that the DCT_Outer_Loop is now pipelined and there is no DCT_Inner_Loop entry.
     <p align="center">
-    <img src ="./images/lab3/Figure21.png">
+    <img src ="./images/lab3/Fig21.png">
     </p>
     <p align = "center">
     <i>DCT_Outer_Loop flattening</i>
     </p>
-3. Select the **dct_1d2** entry in the *Module Hierarchy* pane and observe that the DCT_Outer_Loop spans over eight states in the Performance view.
-    <p align="center">
-    <img src ="./images/lab3/Figure22.png">
-    </p>
-    <p align = "center">
-    <i>The Performance view of the DCT_Outer_Loop function</i>
-    </p>
-4. Switch to the *Synthesis* perspective.
 
 ### Improve Memory Bandwidth
 #### Create a new solution by copying the previous solution (Solution3) settings. Apply ARRAY_PARTITION directive to buf_2d_in of dct (since the bottleneck was on src port of the dct_1d function, which was passed via in_block of the dct_2d function, which in turn was passed via buf_2d_in of the dct function) and col_inbuf of dct_2d. Generate the solution.
 1. Select **Project > New Solution** to create a new solution.
-2. A *Solution Configuration* dialog box will appear. Click the **Finish** button (with Solution3 selected).
+2. A *Solution Configuration* dialog box will appear. Click the **Finish** button (with Solution4 selected).
 3. With dct.c open, select **buf_2d_in** array of the dct function in the Directive pane, right-click on it and select **Insert Directive...**
     The buf_2d_in array is selected since the bottleneck was on src port of the dct_1d function, which was passed via in_block of the dct_2d function, which in turn was passed via buf_2d_in of the **dct** function).
 4. A pop-up menu shows up listing various directives. Select **ARRAY_PARTITION** directive.
 5. Make sure that the type is complete. Enter **2** in the dimension field and click **OK**.
     <p align="center">
-    <img src ="./images/lab3/Figure23.png">
+    <img src ="./images/lab3/Fig23.png">
     </p>
     <p align = "center">
     <i>Applying ARRAY_PARTITION directive to memory buffer</i>
@@ -286,37 +257,25 @@ After completing this lab, you will be able to:
 6. Similarly, apply the **ARRAY_PARTITION** directive with dimension of 2 to the **col_inbuf** array.
 7. Click on the **Synthesis** button.
 8. When the synthesis is completed, select **Project > Compare Reports…** to compare the two solutions.
-9. Select *Solution3* and *Solution4* from the Available Reports, and click on the **Add>>** button.
-10. Observe that the latency reduced from *875* to *509* clock cycles.
+9. Select *Solution4* and *Solution5* from the Available Reports, and click on the **Add>>** button.
+10. Observe that the latency reduced from *643* to *579* clock cycles.
     <p align="center">
-    <img src ="./images/lab3/Figure24.png">
+    <img src ="./images/lab3/Fig24.png">
     </p>
     <p align = "center">
     <i>Performance comparison after array partitioning</i>
     </p>
 11. Scroll down in the comparison report to view the resources utilization. Observe the increase in the FF resource utilization (almost double).
     <p align="center">
-    <img src ="./images/lab3/Figure25.png">
+    <img src ="./images/lab3/Fig25.png">
     </p>
     <p align = "center">
     <i>Resources utilization after array partitioning</i>
     </p>
-12. Expand the Loop entry in the **dct.rpt** entry and observe that the Pipeline II is now 1.
-
-#### Perform resource analysis by switching to the Analysis perspective and looking at the dct resources profile view.
-1. Switch to the *Analysis* perspective, expand the *Module Hierarchy* entries, and select the **dct** entry.
-2. Select the **Resource Profile** pane.
-3. Expand the **Memories** and **Expressions** entries and observe that the most of the resources are consumed by instances. The buf_2d_in array is partitioned into multiple memories and most of the operations are done in addition and comparison.
-    <p align="center">
-    <img src ="./images/lab3/Figure26.png">
-    </p>
-    <p align = "center">
-    <i>Resource profile after partitioning buffers</i>
-    </p>
-4. Switch to the *Synthesis* perspective.
+12. Expand the Loop entry in the **Performance & Resource Estimates** in Synthesis Summary and observe that the Pipeline II is now 1.
 
 ### Apply DATAFLOW Directive
-#### Create a new solution by copying the previous solution (Solution4) settings. Apply the DATAFLOW directive to improve the throughput. Generate the solution and analyze the output.
+#### Create a new solution by copying the previous solution (Solution5) settings. Apply the DATAFLOW directive to improve the throughput. Generate the solution and analyze the output.
 1. Select **Project > New Solution**.
 2. A *Solution Configuration* dialog box will appear. Click the **Finish** button (with Solution4 selected).
 3. Close all inactive solution windows by selecting **Project > Close Inactive Solution Tabs**.
