@@ -206,7 +206,7 @@ After completing this lab, you will be able to:
 5. A pop-up menu shows up listing various directives. Select **PIPELINE** directive.
 6. Click **OK**.
     <p align="center">
-    <img src ="./images/lab3/Figure15.png">
+    <img src ="./images/lab3/Fig15.png">
     </p>
     <p align = "center">
     <i>PIPELINE directive applied to DCT_Outer_Loop</i>
