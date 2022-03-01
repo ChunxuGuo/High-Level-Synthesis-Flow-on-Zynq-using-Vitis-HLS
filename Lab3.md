@@ -277,7 +277,7 @@ After completing this lab, you will be able to:
 ### Apply DATAFLOW Directive
 #### Create a new solution by copying the previous solution (Solution5) settings. Apply the DATAFLOW directive to improve the throughput. Generate the solution and analyze the output.
 1. Select **Project > New Solution**.
-2. A *Solution Configuration* dialog box will appear. Click the **Finish** button (with Solution4 selected).
+2. A *Solution Configuration* dialog box will appear. Click the **Finish** button (with Solution5 selected).
 3. Close all inactive solution windows by selecting **Project > Close Inactive Solution Tabs**.
 4. Select function **dct** in the directives pane, right-click on it and select **Insert Directive...**
 5. Select **DATAFLOW** directive to improve the throughput.
@@ -285,7 +285,7 @@ After completing this lab, you will be able to:
 7. When the synthesis is completed, the synthesis report is automatically opened.
 8. Observe that dataflow type pipeline throughput is listed in the "Performance Estimates*
     <p align="center">
-    <img src ="./images/lab3/Figure27.png">
+    <img src ="./images/lab3/Fig27.png">
     </p>
     <p align = "center">
     <i>Performance estimate after DATAFLOW directive applied</i>
@@ -296,9 +296,9 @@ design can start processing new inputs before the currents input data are output
 * Note that the dataflow is only supported for the functions and loops at the top-level, not those
 which are down through the design hierarchy. Only loops and functions exposed at the toplevel
 of the design will get benefit from dataflow optimization.
-9. Scrolling down into the *Area Estimates*, observe that the number of BRAM_18K required at the top-level remained at 3.
+9. Scrolling down into the *Utilization Estimates*, observe that the number of BRAM_18K required at the top-level remained at 3.
     <p align="center">
-    <img src ="./images/lab3/Figure28.png">
+    <img src ="./images/lab3/Fig28.png">
     </p>
     <p align = "center">
     <i>Resource estimate with DATAFLOW directive applied</i>
@@ -306,50 +306,47 @@ of the design will get benefit from dataflow optimization.
 10. Look at the console view and notice that **dct_coeff_table** is automatically partitioned in dimension *2*.
 11. The *buf_2d_in* and *col_inbuf* arrays are partitioned as we had applied the directive in the previous run. The dataflow is applied at the top-level which created channels between top-level functions read_data, dct_2d, and write_data.
     <p align="center">
-    <img src ="./images/lab3/Figure29.png">
+    <img src ="./images/lab3/Fig29.png">
     </p>
     <p align = "center">
     <i>Console view of synthesis process after DATAFLOW directive applied</i>
     </p>
 
-#### Perform performance analysis by switching to the Analysis perspective and looking at the dct performance profile view.
-1. Switch to the *Analysis* perspective, expand the *Module Hierarchy* entries, and select the **dct_2d**
+#### Perform performance analysis by switching to the Synthesis Summary and looking at the dct Performance & Resource Estimates view.
+1. Switch to the *Synthesis Summary* perspective, expand the *Performance & Resource Estimates* entries, and select the **dct_2d**
      entry.
-2. Look at the *Performance Profile* pane.
-    Observe that most of the latency and interval (throughput) is caused by the dct_2d function. The interval of the top-level function dct, is less than the sum of the intervals of the read_data, dct_2d, and write_data functions indicating that they operate in parallel and dct_2d is the limiting factor. From the Performance Profile tab it can be seen that dct_2d is not completely operating in parallel as Row_DCT_Loop and Col_DCT_Loop were not pipelined.
+2. Observe that most of the latency and interval (throughput) is caused by the dct_2d function. The interval of the top-level function dct, is less than the sum of the intervals of the read_data, dct_2d, and write_data functions indicating that they operate in parallel and dct_2d is the limiting factor. It can be seen that dct_2d is not completely operating in parallel as Row_DCT_Loop and Col_DCT_Loop were not pipelined.
     <p align="center">
-    <img src ="./images/lab3/Figure30.png">
+    <img src ="./images/lab3/Fig30.png">
     </p>
     <p align = "center">
     <i>Performance analysis after the DATAFLOW directive</i>
     </p>
     One of the limitations of the dataflow optimization is that it only works on top-level loops and functions. One way to have the blocks in dct_2d operate in parallel would be to pipeline the entire function. This however would unroll all the loops and can sometimes lead to a large area increase.
     An alternative is to raise these loops up to the top-level of hierarchy, where dataflow optimization can be applied, by removing the dct_2d hierarchy, i.e. inline the dct_2d function.
-3. Switch to the *Synthesis* perspective.
 
 ### Apply INLINE Directive
-#### Create a new solution by copying the previous solution (Solution5) settings. Apply INLINE directive to dct_2d. Generate the solution and analyze the output.
+#### Create a new solution by copying the previous solution (Solution6) settings. Apply INLINE directive to dct_2d. Generate the solution and analyze the output.
 1. Select **Project > New Solution**.
-2. A *Solution Configuration* dialog box will appear. Click the **Finish** button (with Solution5 selected).
+2. A *Solution Configuration* dialog box will appear. Click the **Finish** button (with Solution6 selected).
 3. Select the function *dct_2d* in the directives pane, right-click on it and select **Insert Directive...**
 4. A pop-up menu shows up listing various directives. Select **INLINE** directive. The INLINE directive causes the function to which it is applied to be inlined: its hierarchy is dissolved.
 5. Click on the *Synthesis* button.
 6. When the synthesis is completed, the synthesis report will be opened.
-7. Observe that the latency reduced from *508* to *495* clock cycles, and the Dataflow pipeline throughput drastically reduced from *375* to *114* clock cycles.
+7. Observe that the latency reduced from *577* to *416* clock cycles, and the Dataflow pipeline throughput drastically reduced from *443* to *73* clock cycles.
 8. Examine the synthesis log to see what transformations were applied automatically.
 * The dct_1d function calls are now automatically inlined into the loops from which they are called, which allows the loop nesting to be flattened automatically.
-* Note also that the DSP48E usage has doubled (from 8 to 16). This is because, previously a single instance of dct_1d was used to do both row and column processing; now that the row and column loops are executing concurrently, this can no longer be the case and two copies of dct_1d are required: Vivado HLS will seek to minimize the number of clocks, even if it means increasing the area.
-* BRAM usage has increased once again (from 4 to 6), due to ping-pong buffering between more dataflow processes.
+* Note also that the DSP48E usage has doubled (from 8 to 16). This is because, previously a single instance of dct_1d was used to do both row and column processing; now that the row and column loops are executing concurrently, this can no longer be the case and two copies of dct_1d are required: Vitis HLS will seek to minimize the number of clocks, even if it means increasing the area.
     <p align="center">
-    <img src ="./images/lab3/Figure31.png">
+    <img src ="./images/lab3/Fig31.png">
     </p>
     <p align = "center">
     <i>Console view after INLINE directive applied to dct_2d</i>
     </p>   
-9. Switch to the *Analysis* perspective, expand the *Module Hierarchy* entries, and select the **dct** entry.
-    Observe that the dct_2d entry is now replaced with dct_Loop_Row_DCT_Loop_proc, dct_Loop_Xpose_Row_Outer_Loop_proc, dct_Loop_Col_DCT_Loop_proc, and dct_Loop_Xpose_Col_Outer_Loop_proc since the dct_2d function is inlined. Also observe that all the functions are operating in parallel, yielding the top-level function interval (throughput) of 106 clock cycles.
+9. Switch to the *Synthesis Summary* perspective, expand the *Performance & Resource Estimates* entries, and select the **dct** entry.
+    Observe that the dct_2d entry is now replaced with dct_Loop_Row_DCT_Loop_proc, dct_Loop_Xpose_Row_Outer_Loop_proc, dct_Loop_Col_DCT_Loop_proc, and dct_Loop_Xpose_Col_Outer_Loop_proc since the dct_2d function is inlined. Also observe that all the functions are operating in parallel, yielding the top-level function interval (throughput) of 73 clock cycles.
     <p align="center">
-    <img src ="./images/lab3/Figure32.png">
+    <img src ="./images/lab3/Fig32.png">
     </p>
     <p align = "center">
     <i>Performance analysis after the INLINE directive</i>
