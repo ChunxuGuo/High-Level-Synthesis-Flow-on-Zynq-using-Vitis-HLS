@@ -107,7 +107,7 @@ This lab requires you to develop a peripheral core of the designed filter that c
 1. Make sure that **fir.c** file is open and in focus in the information view.
 2. Select the **Directive** tab.
 3. Right-click *x*, and click on **Insert Directive…**.
-4. In the Vivado HLS Directive Editor dialog box, select **INTERFACE** using the drop-down button.
+4. In the Vitis HLS Directive Editor dialog box, select **INTERFACE** using the drop-down button.
 5. Click on the button beside *mode (optional)*. Select **s_axilite**.
 6. In the *bundle (optional)* field, enter **fir_io** and click **OK**.
     <p align="center">
@@ -159,11 +159,11 @@ This lab requires you to develop a peripheral core of the designed filter that c
     <p align = "center">
     <i>Adapter’s drivers directory</i>
     </p>
-5. Close Vivado HLS by selecting **File > Exit**.
+5. Close Vitis HLS by selecting **File > Exit**.
 
 ### Create a Vivado Project
 #### Launch Vivado Tcl Shell and run the provided tcl script to create an initial system targeting the PYNQ-Z2 board.
-1. Open *Vivado Tcl Shell* by selecting **Start > Xilinx Design Tools > Vivado 2018.2 Tcl Shell**
+1. Open *Vivado Tcl Shell* by selecting **Start > Xilinx Design Tools > Vivado 2021.2 Tcl Shell**
 2. In the shell window, change the directory to **c:/xup/hls/labs/lab4** using the *cd* command.
 3. Run the provided script file to create an initial system having zed_audio_ctrl and GPIO peripherals by typing the following command:
     *source pynq_z2_audio_project_create.tcl*
@@ -191,7 +191,7 @@ This lab requires you to develop a peripheral core of the designed filter that c
 
 #### Instantiate fir_top core twice, one for each side channel, into the processing system naming the instances as fir_left and fir_right.
 1. Click the *Add IP* icon (plus sign icon) and search for **Fir** in the catalog by typing **Fir** and double-click on the **Fir** entry to add an instance.
-    Notice that the added IP has HLS logo in it indicating that this was created by Vivado HLS.
+    Notice that the added IP has HLS logo in it indicating that this was created by Vitis HLS.
 2. Select the added instance in the diagram, and change its instance name to **fir_left** by typing it in the *Name* field of the *Block Properties* form in the left.
 3. Similarly, add another instance of the HLS IP, and naming it **fir_right**.
 4. Click on **Run Connection Automation**, and select **All Automation**.
@@ -281,7 +281,7 @@ Number of LUTs used: **154**
 
 ### Create a Project using Vivado GUI
 #### Launch Vivado and create an empty project targeting the Pynq (xc7z020clg400-1)
-1. Open Vivado by selecting **Start >  Xilinx Design Tools > Vivado 2018.2**
+1. Open Vivado by selecting **Start >  Xilinx Design Tools > Vivado 2021.2**
 2. Click **Create New Project** to start the wizard. You will see the Create a New Vivado Project dialog box. Click **Next**.
 3. Click the Browse button of the Project Location field of the New Project form, browse to **c:\xup\hls\labs\lab4**, and click **Select**.
 4. Enter **audio** in the Project Name field. Make sure that the *Create Project Subdirectory* box is checked. Click Next.
