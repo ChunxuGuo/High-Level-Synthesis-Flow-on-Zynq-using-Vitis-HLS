@@ -173,7 +173,7 @@ This lab requires you to develop a peripheral core of the designed filter that c
 #### Add the HLS IP to the IP Catalog
 1. Select **Flow Navigator > Project Manager > Settings**
 2. Expand **IP > Repository** in the left pane.
-3. Click the **+** button (The lab4/ip_repo directory has already been added). Browse to **/home/xup/hls/labs/lab4/fir.prj/solution1/impl/ip** and click **Select**.
+3. Click the **+** button (The lab4/ip_repo directory has already been added). Browse to **/home/xup/hls/labs/lab4/fir/solution1/impl/ip** and click **Select**.
     The directory will be scanned and added in the IP Repositories window, and one IP entry will be detected.
 4. Click **OK**.
     <p align="center">
