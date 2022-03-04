@@ -173,7 +173,7 @@ This lab requires you to develop a peripheral core of the designed filter that c
 #### Add the HLS IP to the IP Catalog
 1. Select **Flow Navigator > Project Manager > Settings**
 2. Expand **IP > Repository** in the left pane.
-3. Click the **+** button (The lab4/ip_repo directory has already been added). Browse to **c:\xup\hls\labs\lab4\fir.prj\solution1\impl\ip** and click **Select**.
+3. Click the **+** button (The lab4/ip_repo directory has already been added). Browse to **/home/xup/hls/labs/lab4/fir.prj/solution1/impl/ip** and click **Select**.
     The directory will be scanned and added in the IP Repositories window, and one IP entry will be detected.
 4. Click **OK**.
     <p align="center">
@@ -218,7 +218,7 @@ This lab requires you to develop a peripheral core of the designed filter that c
 2. Run *Design Validation* (**Tools > Validate Design**) and verify there are no errors
 3. In the sources view, right-click on the block diagram file, **system.bd**, and select **Create HDL Wrapper** to update the HDL wrapper file. When prompted, click OK with the Let Vivado manage wrapper and auto-update option.
 4. Click **Add Sources** in the Flow Navigator pane, select **Add or Create Constraints**, and click **Next**.
-5. Click the *Add Files* button, browse to the **c:\xup\hls\labs\lab4** folder, select **pynq_z2_audio_constraints.xdc**.
+5. Click the *Add Files* button, browse to the **/home/xup/hls/labs/lab4** folder, select **pynq_z2_audio_constraints.xdc**.
 6. Click *Copy constraints files into project* and then click **Finish** to add the file.
 7. Click on the **Generate Bitstream** in the Flow Navigator to run the synthesis, implementation, and bitstream generation processes.
 8. Click **Save, Yes**, and **OK** if prompted to start the process.
@@ -235,14 +235,14 @@ This lab requires you to develop a peripheral core of the designed filter that c
     This will open the *Software Platform Settings* form showing the OS and libraries selections.
 
 7. Click **OK** to accept the default settings, as we want to create a *standalone_bsp_0* software platform project without requiring any additional libraries support.
-    The library generator will run in the background and will create **xparameters.h** file in the **C:\xup\hls\labs\lab4\audio\audio.sdk\standalone_bsp_0\ps7_cortexa9_0\include** directory.
+    The library generator will run in the background and will create **xparameters.h** file in the **/home/xup/hls/labs/lab4/audio/audio.sdk/standalone_bsp_0/ps7_cortexa9_0/include** directory.
     
 8. Select **File > New > Application Project**.
 9. Enter **TestApp** as the *Project* Name, and for Board Support Package, choose **Use existing** (standalone_bsp should be the only option)
 10. Click **Next**, select **Empty Application** and click **Finish**
 11. Select *TestApp* in the project view, right-click the *src* folder, and select **Import**.
 12. Expand **General** category and double-click on **File System**.
-13. Browse to **c:\xup\hls\labs\lab4** folder and click **OK**.
+13. Browse to **/home/xup/hls/labs/lab4** folder and click **OK**.
 14. Select both **pynq_z2_testapp.c** and **pynq_z2_audio.h** and click **Finish** to add the file to the project. The program should compile successfully.
 
 ### Verify the Design in Hardware
@@ -278,7 +278,7 @@ Number of LUTs used: **257**
 #### Launch Vivado and create an empty project targeting the Pynq (xc7z020clg400-1)
 1. Open Vivado by selecting **Start >  Xilinx Design Tools > Vivado 2021.2**
 2. Click **Create New Project** to start the wizard. You will see the Create a New Vivado Project dialog box. Click **Next**.
-3. Click the Browse button of the Project Location field of the New Project form, browse to **c:\xup\hls\labs\lab4**, and click **Select**.
+3. Click the Browse button of the Project Location field of the New Project form, browse to **/home/xup/hls/labs/lab4**, and click **Select**.
 4. Enter **audio** in the Project Name field. Make sure that the *Create Project Subdirectory* box is checked. Click Next.
     <p align="center">
     <img src ="./images/lab4/FigureA1.png">
@@ -362,7 +362,7 @@ change the system configuration.
     <i>Invoking Project Settings</i>
     </p> 
 2. Expand **IP > Repository** in the left pane.
-3. Click the + button. Browse to **c:\xup\hls\labs\lab4\ip_repo** and click **Select**.
+3. Click the + button. Browse to **/home/xup/hls/labs/lab4/ip_repo** and click **Select**.
     The directory will be scanned and added in the IP Repositories window, and two IP entry will be detected.
 4. Click **OK** to accept the settings.
 
