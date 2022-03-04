@@ -177,7 +177,7 @@ This lab requires you to develop a peripheral core of the designed filter that c
     The directory will be scanned and added in the IP Repositories window, and one IP entry will be detected.
 4. Click **OK**.
     <p align="center">
-    <img src ="./images/lab4/Figure12.png">
+    <img src ="./images/lab4/Fig12.png">
     </p>
     <p align = "center">
     <i>Setting path to IP Repositories</i>
@@ -281,7 +281,7 @@ Number of LUTs used: **257**
 3. Click the Browse button of the Project Location field of the New Project form, browse to **/home/xup/hls/labs/lab4**, and click **Select**.
 4. Enter **audio** in the Project Name field. Make sure that the *Create Project Subdirectory* box is checked. Click Next.
     <p align="center">
-    <img src ="./images/lab4/FigureA1.png">
+    <img src ="./images/lab4/FigA1.png">
     </p>
     <p align = "center">
     <i>Project Name entry</i>
