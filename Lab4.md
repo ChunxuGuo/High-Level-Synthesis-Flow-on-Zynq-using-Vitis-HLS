@@ -111,7 +111,7 @@ This lab requires you to develop a peripheral core of the designed filter that c
     </p>
 7. Similarly, apply the **INTERFACE** directive (including bundle) to the *y* output.
     <p align="center">
-    <img src ="./images/lab4/Fig6.png" width="60%" height="80%"/>
+    <img src ="./images/lab4/Fig6.png">
     </p>
     <p align = "center">
     <i>Applying bundle to assign y output to AXI4Lite adapter</i>
