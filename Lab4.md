@@ -155,11 +155,11 @@ This lab requires you to develop a peripheral core of the designed filter that c
 5. Close Vitis HLS by selecting **File > Exit**.
 
 ### Create a Vivado Project
-#### Launch Vivado Tcl Shell and run the provided tcl script to create an initial system targeting the PYNQ-Z2 board.
-1. Open *Vivado Tcl Shell* by selecting **Start > Xilinx Design Tools > Vivado 2021.2 Tcl Shell**
-2. In the shell window, change the directory to **c:/xup/hls/labs/lab4** using the *cd* command.
+#### Open a terminal and run the provided tcl script to create an initial system targeting the PYNQ-Z2 board.
+1. Open a terminal.
+2. Change the directory to **/home/xup/hls/labs/lab4** using the *cd* command.
 3. Run the provided script file to create an initial system having zed_audio_ctrl and GPIO peripherals by typing the following command:
-    *source pynq_z2_audio_project_create.tcl*
+    *vivado -source pynq_z2_audio_project_create.tcl*
     The script will be run and the initial system, shown below, will be created.
     <p align="center">
     <img src ="./images/lab4/Figure11.png">
