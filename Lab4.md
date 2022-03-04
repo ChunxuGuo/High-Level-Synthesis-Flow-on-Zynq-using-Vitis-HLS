@@ -89,17 +89,10 @@ This lab requires you to develop a peripheral core of the designed filter that c
     </p>
     You can see the design expects x input as 16-bit scalar and outputs y via pointer of the 16-bit data. It also has ap_vld signal to indicate when the result is valid.
 
-#### Add PIPELINE directive to the loop and re-synthesize the design. View the synthesis results.
-1. Make sure that the *fir.c* is open in the information view.
-2. Select the **Directive** tab, and apply the **PIPELINE** directive to the loop.
-3. Select **Solution > Run C Synthesis > Active Solution** to start the synthesis process.
-4. When synthesis is completed, the *Synthesis Results* will be displayed in the information pane.
-5. Note that the latency has reduced to 62 clock cycles. The DSP48 and BRAM consumption remains same; however, LUT and FF consumptions have slightly increased.
-
 ### Run RTL/C CoSimulation
 #### Run the RTL/C Co-simulation, selecting Verilog. Verify that the simulation passes.
 1. Select **Solution > Run C/RTL Co-simulation** to open the dialog box so the desired simulations can be run.
-2. Select the *Verilog* option and click **OK**. The Co-simulation will run, generating and compiling several files, and then simulating the design. In the console window you can see the progress. When done the RTL Simulation Report shows that it was successful and the latency reported was 62.
+2. Select the *Verilog* option and click **OK**. The Co-simulation will run, generating and compiling several files, and then simulating the design. In the console window you can see the progress. When done the RTL Simulation Report shows that it was successful and the latency reported was 68.
 
 ### Setup IP-XACT Adapter
 #### Add INTERFACE directive to create AXI4LiteS adapters so IP-XACT adapter can be generated during the RTL Export step.
@@ -111,35 +104,35 @@ This lab requires you to develop a peripheral core of the designed filter that c
 5. Click on the button beside *mode (optional)*. Select **s_axilite**.
 6. In the *bundle (optional)* field, enter **fir_io** and click **OK**.
     <p align="center">
-    <img src ="./images/lab4/Figure5.png">
+    <img src ="./images/lab4/Fig5.png">
     </p>
     <p align = "center">
     <i>Selecting the AXI4LiteS adapter and naming bundle</i>
     </p>
 7. Similarly, apply the **INTERFACE** directive (including bundle) to the *y* output.
     <p align="center">
-    <img src ="./images/lab4/Figure6.png" width="60%" height="80%"/>
+    <img src ="./images/lab4/Fig6.png" width="60%" height="80%"/>
     </p>
     <p align = "center">
     <i>Applying bundle to assign y output to AXI4Lite adapter</i>
     </p>
 8. Apply the **INTERFACE** directive to the *top-level module fir* to include ap_start, ap_done, and ap_idle signals as part of bus adapter (the variable name shown will be return). Include the bundle information too.
     <p align="center">
-    <img src ="./images/lab4/Figure7.png">
+    <img src ="./images/lab4/Fig7.png">
     </p>
     <p align = "center">
     <i>Applying bundle to assign function control signals to AXI4Lite adapter</i>
     </p>
-    Note that the above steps will create address maps for x, y, ap_start ap_valid, ap_done, and ap_idle, which can be accessed via software. Alternately, ap_start, ap_valid, ap_done, ap_idle signals can be generated as separate ports on the core by not applying *RESOURCE* directive to the top-level module fir. These ports will then have to be connected in a processor system using available GPIO IP.
+    Note that the above steps will create address maps for x, y, ap_start ap_valid, ap_done, and ap_idle, which can be accessed via software. Alternately, ap_start, ap_valid, ap_done, ap_idle signals can be generated as separate ports on the core. These ports will then have to be connected in a processor system using available GPIO IP.
 
 ### Generate IP-XACT Adapter
 #### Re-synthesize the design as directives have been added. Run the RTL Export to generate the IP-XACT adapter.
-1. Since the directives have been added, it is safe to re-synthesize the design. Select **Solution > Run C Synthesis > Active Solution**
+1. Since the directives have been added, it is safe to re-synthesize the design. Select **Solution > Run C Synthesis > Active Solution**.
     Check the Interface summary at the bottom of the Synthesis report to see the interface that has been created.
 2. Once the design is synthesized, select **Solution > Export RTL** to open the dialog box so the desired IP can be generated.
     An **Export RTL Dialog** box will open.
     <p align="center">
-    <img src ="./images/lab4/Figure8.png">
+    <img src ="./images/lab4/Fig8.png">
     </p>
     <p align = "center">
     <i>Export RTL Dialog</i>
@@ -147,14 +140,14 @@ This lab requires you to develop a peripheral core of the designed filter that c
 3. Click **OK** to generate the IP-XACT adapter.
 4. When the run is completed, expand the **impl** folder in the Explorer view and observe various generated directories, such as ip, misc, verilog and vhdl.
     <p align="center">
-    <img src ="./images/lab4/Figure9.png">
+    <img src ="./images/lab4/Fig9.png">
     </p>
     <p align = "center">
     <i>IP-XACT adapter generated</i>
     </p>
     Expand the ip directory and observe several files and sub-directories. One of the sub-directory of interest is the drivers directory which consists of header, c, tcl, mdd, and makefile files. Another file of interest is the zip file, which is the ip repository file that can be imported in an IP Integrator design
     <p align="center">
-    <img src ="./images/lab4/Figure10.png">
+    <img src ="./images/lab4/Fig10.png">
     </p>
     <p align = "center">
     <i>Adapter’s drivers directory</i>
@@ -270,12 +263,12 @@ In this lab, you added INTERFACE directive to create an IP-XACT adapter. You gen
 
 ## Answer
 **Answers for question 1:**  
-Estimated clock period: **8.70 ns**   
-Worst case latency: **174**   
+Estimated clock period: **4.644 ns**   
+Worst case latency: **70**   
 Number of DSP48E used:  **3**   
 Number of BRAMs used:  **0**   
-Number of FFs used: **167**   
-Number of LUTs used: **154**   
+Number of FFs used: **237**   
+Number of LUTs used: **257**   
 
 ## Appendix
 
