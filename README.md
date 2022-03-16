@@ -14,13 +14,11 @@ Clone this repository and then copy the **sources** directory as **labs** to a w
 ---
 **NOTE**
 
-Board support for the PYNQ-Z1/Z2 are not included in Vitis 2021.2 by default. The relevant files need to be extracted and saved to:
+Board support for the PYNQ-Z2 are not included in Vitis 2021.2 by default. The relevant files need to be extracted and saved to:
 
  {Vitis installation}\data\boards\board_files\zynq
 
 These files can be downloaded from  
-
-PYNQ-Z1:[/board_files](https://www.xilinx.com/support/documentation/university/vivado/workshops/vivado-adv-embedded-design-zynq/materials/2018x/PYNQZ1/pynq-z1.zip). 
 
 PYNQ-Z2:[/board_files](https://www.xilinx.com/support/documentation/university/vivado/workshops/vivado-adv-embedded-design-zynq/materials/2018x/PYNQZ2/pynq-z2.zip). 
 
@@ -28,7 +26,7 @@ PYNQ-Z2:[/board_files](https://www.xilinx.com/support/documentation/university/v
 
 ## Hardware Setup
 
-**PYNQ-Z1/Z2**:  Connect the board to the PC using a micro USB cable. Make sure that a jumper is connected to JTAG (between JP1_1 and JP1_2) to use the board in the development mode. Also, make sure that another jumper is placed between J9_2 and J9_3 to select USB as a power source.
+**PYNQ-Z2**:  Connect the board to the PC using a micro USB cable. Make sure that a jumper is connected to JTAG (between JP1_1 and JP1_2) to use the board in the development mode. Also, make sure that another jumper is placed between J9_2 and J9_3 to select USB as a power source.
 
 ---
 
@@ -56,5 +54,3 @@ discrete cosine transformation (DCT) on an 8x8 block of data.
 
 This lab introduces a design flow to generate a IP-XACT adapter from a design using Vitis HLS and
 using the generated IP-XACT adapter in a processor system using IP Integrator in Vivado.
-
-**Note.** Since PYNQ-Z1 board does not have Audio CODEC chip, this lab cannot be ported/verfied on the board, though design flow is still applicable to the board.
