@@ -16,7 +16,7 @@ The design consists of a FIR filter to filter a 4 KHz tone added to CD quality (
     FPASS2=6000 Hz   
     APASS1=APASS2=1 dB   
     ASTOP=60 dB  
-This lab requires you to develop a peripheral core of the designed filter that can be instantiated in a processor system. The processor system will acquire a stereo music stream using an on-board CODEC chip and I2C controller, process it through the designed filter (bandstop filter), and output back to the headphone. **Note: You won't be able to validate this lab on the PYNQ-Z1 board as the board does not have Audio CODEC chip.**
+This lab requires you to develop a peripheral core of the designed filter that can be instantiated in a processor system. The processor system will acquire a stereo music stream using an on-board CODEC chip and I2C controller, process it through the designed filter (bandstop filter), and output back to the headphone.
 
 ## Steps
 
