@@ -14,7 +14,7 @@ After completing this lab, you will be able to:
 ## Steps
 
 ### Create a New Project
-#### Create a new project in Vitis HLS targeting PYNQ-Z1 or PYNQ-Z2 board
+#### Create a new project in Vitis HLS targeting PYNQ-Z2 board
 1. Type **source /tools/Xilinx/Vitis/2021.2/settings64.sh** and then **vitis_hls** in the terminal.
     <p align="center">
     <img src ="./images/lab1/Fig1.png">
