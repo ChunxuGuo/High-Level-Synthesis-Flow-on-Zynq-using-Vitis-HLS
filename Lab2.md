@@ -93,13 +93,14 @@ After completing this lab, you will be able to:
     Number of FFs used:   
     Number of LUTs used:  
 
-4. Expand the **Module & loop** and note the latency and trip count numbers for the yuv_scale function. Note that the iteration latency of YUV_SCALE_LOOP_Y is 6x the specified TRIPCOUNT, implying that 6 cycles are used for each of the iteration of the loop.
+4. Expand the **Module & loop** and note the latency and trip count numbers for the yuv_scale function. Note that the iteration latency of YUV_SCALE_LOOP_X_YUV_SCALE_LOOP_Y is 6x the specified TRIPCOUNT, implying that 6 cycles are used for each of the iteration of the loop.
     <p align="center">
     <img src ="./images/lab2/Fig8.png">
     </p>
     <p align = "center">
     <i>Loop latency</i>
     </p>
+    Note that YUV_SCALE_LOOP_X_YUV_SCALE_LOOP_Y is already pipelined. -pipeline_loops <threshold> specifies the lower limit used when automatically pipelining loops. The default is 64, causing Vitis HLS is to automatically pipeline loops with a tripcount of 64, or greater. If the option is applied, the innermost loop with a tripcount higher than the threshold is pipelined, or if the tripcount of the innermost loop is less than or equal to the threshold, its parent loop is pipelined. If the innermost loop has no parent loop, the innermost loop is pipelined regardless of its tripcount.
 
 5. You can verify this by opening the Schedule Viewer, and expand the **YUV_SCALE_LOOP_X** entry.
     <p align="center">
